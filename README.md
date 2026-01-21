@@ -31,6 +31,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Este projeto está configurado para o ecossistema Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Deploy:** Conecte o repositório `https://github.com/Lucas-bevilacqua/nidusventure` ao seu dashboard da Vercel.
+2. **Banco de Dados:** No dashboard da Vercel, vá em **Storage** > **Postgres** e crie uma nova base de dados.
+3. **Conexão:** Clique em **Connect** e selecione o seu projeto para que a Vercel injete as variáveis de ambiente (`POSTGRES_URL`, etc) automaticamente.
+4. **Captura de Leads:** O formulário de contato já está configurado para salvar os dados na tabela `leads` via Next.js Server Actions.
