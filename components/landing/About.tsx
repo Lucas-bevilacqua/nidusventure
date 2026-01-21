@@ -17,9 +17,9 @@ export function About() {
                                 The Founder
                             </span>
                             <h2 className="text-5xl md:text-8xl font-black italic uppercase leading-[1.1] md:leading-[1] tracking-tighter">
-                                De Produtor <br />
-                                a Arquiteto <br />
-                                <span className="text-white/20">de Negócios.</span>
+                                R$ 2M+ <br />
+                                <span className="text-primary italic">economizados</span> <br />
+                                para clientes.
                             </h2>
                         </div>
 
@@ -44,7 +44,7 @@ export function About() {
                             </p>
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-[2px] bg-primary" />
-                                <span className="text-xs font-black uppercase tracking-[0.2em] text-primary">Lucas Bevilacqua</span>
+                                <span className="text-xs font-black uppercase tracking-[0.2em] text-primary">Lucas Bevilacqua | IA Product Manager @ Grupo Ideal Trends</span>
                             </div>
                         </div>
                     </div>

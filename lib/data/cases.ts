@@ -19,12 +19,12 @@ export const cases: CaseStudy[] = [
         slug: "onboarding-optimization",
         tag: "OPERAÇÃO",
         client: "SaaS Enterprise",
-        title: "ECONOMIA DE R$ 80K ELIMINANDO O HYPE",
-        shortDesc: "Uma empresa de software queria automatizar o cadastro de clientes. Reduzimos o tempo de 40h para 8h apenas eliminando campos inúteis. Sem gastar um centavo com IA.",
-        fullDesc: "O problema era clássico: excesso de captação de dados sem propósito claro. O cliente acreditava que precisava de um chatbot com IA caríssimo para lidar com as 40 horas semanais de preenchimento manual. Nossa análise mostrou que 90% dos dados coletados nunca eram usados. Otimizamos o sistema para focar no lucro, não em tech.",
+        title: "ECONOMIA DE R$ 280K/ANO ELIMINANDO O HYPE",
+        shortDesc: "SaaS B2B, 120 funcionários. O onboarding levava 40h → agora leva 8h. Descobrimos que 90% das etapas eram desnecessárias.",
+        fullDesc: "O problema era clássico: excesso de captação de dados sem propósito claro. O cliente economizaria R$ 80k imediatos em ferramentas mas o lucro real veio da eficiência: R$ 280k economizados por ano em tempo de time focado no que importa.",
         stats: [
-            { label: "Dinheiro Salvo", value: "R$ 80.000" },
-            { label: "Tempo Reduzido", value: "80%" },
+            { label: "Economia/Ano", value: "R$ 280.000" },
+            { label: "Investimento Tech", value: "R$ 0" },
         ],
     },
     {

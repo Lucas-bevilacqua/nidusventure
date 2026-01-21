@@ -6,40 +6,53 @@ import { ArrowRight, Box, Repeat, Zap } from "lucide-react";
 
 const steps = [
     {
-        id: "system",
-        title: "SISTEMA",
-        subtitle: "A ESTRUTURA DO LUCRO",
-        desc: "Analisamos como sua empresa realmente ganha dinheiro. O que é trabalho produtivo e o que é apenas perda de tempo?",
+        id: "diagnosis",
+        title: "DIAGNÓSTICO",
+        subtitle: "MAPEAMENTO REAL",
+        desc: "Analisamos sua operação de ponta a ponta para identificar onde o dinheiro está fugindo e onde estão os gargalos.",
         details: [
-            "Mapeamento do fluxo de caixa",
-            "Fim das tarefas repetitivas",
-            "Organização de processos",
+            "Mapeamento de processos",
+            "Identificação de gargalos",
+            "Análise de custos ocultos",
         ],
         icon: Box,
         color: "#00ff41",
     },
     {
-        id: "flow",
-        title: "FLUXO",
-        subtitle: "A AGILIDADE DA EQUIPE",
-        desc: "Desenhamos o caminho mais rápido para o resultado. Criamos regras claras para que a informação não fique presa em ninguém.",
+        id: "elimination",
+        title: "ELIMINAÇÃO",
+        subtitle: "FIM DO DESPERDÍCIO",
+        desc: "Removemos etapas, processos e custos que não geram valor. Menos é lucro imediato na sua conta.",
         details: [
-            "Manuais de execução simples",
-            "Fim dos gargalos humanos",
-            "Comunicação automática",
+            "Remoção de burocracia",
+            "Simplificação de etapas",
+            "Corte de custos reais",
         ],
         icon: Repeat,
         color: "#00ff41",
     },
     {
-        id: "tool",
-        title: "FERRAMENTA",
-        subtitle: "A ESCALA REAL",
-        desc: "Agora instalamos a tecnologia. Usamos IA e automações que servem ao seu negócio para que ele cresça sem precisar de mais gente.",
+        id: "optimization",
+        title: "OTIMIZAÇÃO",
+        subtitle: "ORDEM NO FLUXO",
+        desc: "Simplificamos o que sobrou. Desenhamos o caminho mais rápido e eficiente para a execução do time.",
         details: [
-            "Robôs de atendimento e venda",
-            "Sistemas que rodam sozinhos",
-            "Painel de lucros em tempo real",
+            "Novos fluxos de trabalho",
+            "Manuais de execução",
+            "Eficiência operacional",
+        ],
+        icon: Zap,
+        color: "#00ff41",
+    },
+    {
+        id: "implementation",
+        title: "IMPLEMENTAÇÃO",
+        subtitle: "MÃO NA MASSA",
+        desc: "Colocamos para funcionar. Instalamos a tecnologia necessária para que o sistema rode sozinho.",
+        details: [
+            "Configuração de sistemas",
+            "Automações inteligentes",
+            "Treinamento do time",
         ],
         icon: Zap,
         color: "#00ff41",
@@ -70,7 +83,7 @@ export function Methodology() {
                     </div>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-0 border-2 border-border bg-card/10">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0 border-2 border-border bg-card/10 overflow-hidden">
                     {steps.map((step, i) => (
                         <motion.div
                             key={step.id}
@@ -78,16 +91,16 @@ export function Methodology() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.2 }}
                             viewport={{ once: true }}
-                            className="p-8 md:p-12 border-b-2 lg:border-b-0 lg:border-r-2 border-border last:border-0 hover:bg-white/[0.02] transition-colors relative group"
+                            className="p-6 sm:p-8 md:p-12 border-b-2 sm:border-b-2 sm:border-r-2 lg:border-b-0 lg:border-r-2 border-border last:border-0 sm:last:border-r-0 lg:last:border-r-2 hover:bg-white/[0.02] transition-colors relative group overflow-hidden"
                         >
                             {/* Step Number Overlay */}
-                            <span className="absolute top-6 right-8 text-7xl font-black italic text-white/[0.03] group-hover:text-primary/[0.05] transition-colors">
+                            <span className="absolute top-4 right-4 sm:top-6 sm:right-8 text-5xl sm:text-7xl font-black italic text-white/[0.03] group-hover:text-primary/[0.05] transition-colors pointer-events-none">
                                 0{i + 1}
                             </span>
 
-                            <div className="space-y-8 relative">
+                            <div className="space-y-6 md:space-y-8 relative">
                                 <div className="space-y-2">
-                                    <h3 className="text-4xl font-black italic tracking-tighter text-primary">
+                                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black italic tracking-tighter text-primary break-words">
                                         {step.title}
                                     </h3>
                                     <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
@@ -95,15 +108,15 @@ export function Methodology() {
                                     </p>
                                 </div>
 
-                                <p className="text-muted-foreground leading-relaxed">
+                                <p className="text-sm md:text-base text-muted-foreground leading-relaxed break-words">
                                     {step.desc}
                                 </p>
 
-                                <ul className="space-y-4 pt-8 border-t border-border/50">
+                                <ul className="space-y-3 md:space-y-4 pt-6 md:pt-8 border-t border-border/50">
                                     {step.details.map((detail, idx) => (
-                                        <li key={idx} className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest">
-                                            <div className="w-2 h-2 bg-primary" />
-                                            {detail}
+                                        <li key={idx} className="flex items-start gap-3 md:gap-4 text-xs font-bold uppercase tracking-widest">
+                                            <div className="w-2 h-2 bg-primary shrink-0 mt-1.5" />
+                                            <span className="break-words">{detail}</span>
                                         </li>
                                     ))}
                                 </ul>
@@ -148,32 +161,32 @@ export function Methodology() {
                                     <ArrowRight className="w-4 h-4 group-open:rotate-90 transition-transform" />
                                 </div>
                             </summary>
-                            <div className="p-8 pt-0 border-t border-border/50 space-y-6">
-                                <div className="grid md:grid-cols-3 gap-6">
+                            <div className="p-6 md:p-8 pt-0 border-t border-border/50 space-y-4 md:space-y-6">
+                                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                                     <div className="space-y-2">
                                         <span className="text-[10px] font-black text-primary uppercase tracking-widest">01. SISTEMA</span>
-                                        <p className="text-xs text-muted-foreground leading-tight">Questionamos os 300 campos. Descobrimos que apenas 27 eram essenciais para o lucro.</p>
+                                        <p className="text-xs text-muted-foreground leading-tight break-words">Questionamos os 300 campos. Descobrimos que apenas 27 eram essenciais para o lucro.</p>
                                     </div>
                                     <div className="space-y-2">
                                         <span className="text-[10px] font-black text-primary uppercase tracking-widest">02. FLUXO</span>
-                                        <p className="text-xs text-muted-foreground leading-tight">Redesenhamos a coleta para ser assíncrona e focada nos 27 campos reais.</p>
+                                        <p className="text-xs text-muted-foreground leading-tight break-words">Redesenhamos a coleta para ser assíncrona e focada nos 27 campos reais.</p>
                                     </div>
-                                    <div className="space-y-2">
+                                    <div className="space-y-2 sm:col-span-2 md:col-span-1">
                                         <span className="text-[10px] font-black text-primary uppercase tracking-widest">03. FERRAMENTA</span>
-                                        <p className="text-xs text-muted-foreground leading-tight">Nenhuma! O processo limpo resolveu o problema sem gastar 1 centavo em tech.</p>
+                                        <p className="text-xs text-muted-foreground leading-tight break-words">Nenhuma! O processo limpo resolveu o problema sem gastar 1 centavo em tech.</p>
                                     </div>
                                 </div>
-                                <div className="pt-6 border-t border-border/50 flex flex-wrap gap-8 items-center justify-between">
+                                <div className="pt-4 md:pt-6 border-t border-border/50 flex flex-wrap gap-4 md:gap-8 items-center justify-between">
                                     <div className="space-y-1">
-                                        <div className="text-3xl font-black italic tracking-tighter text-primary">40h → 8h</div>
+                                        <div className="text-2xl md:text-3xl font-black italic tracking-tighter text-primary">40h → 8h</div>
                                         <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Tempo Reduzido</div>
                                     </div>
                                     <div className="space-y-1">
-                                        <div className="text-3xl font-black italic tracking-tighter text-primary">R$ 0</div>
+                                        <div className="text-2xl md:text-3xl font-black italic tracking-tighter text-primary">R$ 0</div>
                                         <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Gasto em IA</div>
                                     </div>
                                     <div className="space-y-1">
-                                        <div className="text-3xl font-black italic tracking-tighter text-primary">R$ 80k</div>
+                                        <div className="text-2xl md:text-3xl font-black italic tracking-tighter text-primary">R$ 80k</div>
                                         <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Economia Direta</div>
                                     </div>
                                 </div>

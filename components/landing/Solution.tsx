@@ -7,15 +7,15 @@ import Link from "next/link";
 
 export function Solution() {
     return (
-        <section className="py-24 md:py-32 bg-secondary/20 relative overflow-hidden" id="servicos">
+        <section className="py-16 sm:py-24 md:py-32 bg-secondary/20 relative overflow-hidden" id="servicos">
             <Container>
                 <div className="text-center mb-16 space-y-4">
                     <span className="text-primary text-xs font-black uppercase tracking-[0.4em]">
                         O Modelo NIDUS
                     </span>
                     <h2 className="text-5xl md:text-7xl font-black italic uppercase leading-[1.1] md:leading-[1] tracking-tighter">
-                        Duas frentes, <br />
-                        <span className="text-white/20">um único resultado.</span>
+                        Como a NIDUS <br />
+                        <span className="text-white/20">gera valor real.</span>
                     </h2>
                 </div>
 
@@ -80,7 +80,7 @@ export function Solution() {
                             </div>
 
                             <p className="text-lg text-muted-foreground leading-relaxed max-w-sm">
-                                Construímos o futuro. Transformamos os problemas que resolvemos em ferramentas que podem ser vendidas para o mercado.
+                                Construímos soluções que escalam. Transformamos a inteligência de processos em ferramentas práticas para o mercado.
                             </p>
 
                             <ul className="space-y-3">
@@ -108,33 +108,33 @@ export function Solution() {
                 >
                     <div className="text-center space-y-4">
                         <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter">
-                            O Ciclo de <span className="text-primary underline decoration-primary/30">Valor Infinito.</span>
+                            Como a consultoria <span className="text-primary underline decoration-primary/30">vira produto.</span>
                         </h3>
                         <p className="text-muted-foreground font-medium">Como a NIDUS transforma problemas em ativos de capital.</p>
                     </div>
 
-                    <div className="relative grid grid-cols-1 md:grid-cols-7 gap-4 items-center">
-                        <Link href="/consultoria" className="p-6 border border-border bg-background text-center space-y-2 hover:border-primary transition-colors cursor-pointer">
+                    <div className="relative grid grid-cols-1 md:grid-cols-7 gap-4 items-center overflow-x-auto">
+                        <Link href="/consultoria" className="p-4 md:p-6 border border-border bg-background text-center space-y-2 hover:border-primary transition-colors cursor-pointer min-w-[140px]">
                             <div className="text-[10px] font-black text-primary uppercase tracking-widest">Passo 01</div>
-                            <p className="text-xs font-bold uppercase tracking-tighter leading-tight">Cliente paga R$ 50k p/ Consultoria</p>
+                            <p className="text-xs font-bold uppercase tracking-tighter leading-tight break-words">Cliente paga R$ 50k p/ Consultoria</p>
                         </Link>
-                        <div className="flex justify-center md:rotate-0 rotate-90"><ArrowRight className="w-4 h-4 text-primary/30" /></div>
+                        <div className="flex justify-center md:rotate-0 rotate-90 shrink-0"><ArrowRight className="w-4 h-4 text-primary/30" /></div>
 
-                        <div className="p-6 border border-border bg-background text-center space-y-2">
+                        <div className="p-4 md:p-6 border border-border bg-background text-center space-y-2 min-w-[140px]">
                             <div className="text-[10px] font-black text-primary uppercase tracking-widest">Passo 02</div>
-                            <p className="text-xs font-bold uppercase tracking-tighter leading-tight">Resolvemos Problema Complexo X</p>
+                            <p className="text-xs font-bold uppercase tracking-tighter leading-tight break-words">Resolvemos Problema Complexo X</p>
                         </div>
-                        <div className="flex justify-center md:rotate-0 rotate-90"><ArrowRight className="w-4 h-4 text-primary/30" /></div>
+                        <div className="flex justify-center md:rotate-0 rotate-90 shrink-0"><ArrowRight className="w-4 h-4 text-primary/30" /></div>
 
-                        <div className="p-6 border border-primary/50 bg-primary/5 text-center space-y-2">
+                        <div className="p-4 md:p-6 border border-primary/50 bg-primary/5 text-center space-y-2 min-w-[140px]">
                             <div className="text-[10px] font-black text-primary uppercase tracking-widest">Passo 03</div>
-                            <p className="text-xs font-bold uppercase tracking-tighter leading-tight">Validamos o Problema no Mercado</p>
+                            <p className="text-xs font-bold uppercase tracking-tighter leading-tight break-words">Validamos o Problema no Mercado</p>
                         </div>
-                        <div className="flex justify-center md:rotate-0 rotate-90"><ArrowRight className="w-4 h-4 text-primary/30" /></div>
+                        <div className="flex justify-center md:rotate-0 rotate-90 shrink-0"><ArrowRight className="w-4 h-4 text-primary/30" /></div>
 
-                        <Link href="/venture-building" className="p-6 border-2 border-primary bg-primary/10 text-center space-y-2 shadow-[0_0_20px_rgba(0,255,65,0.1)] hover:bg-primary/20 transition-colors cursor-pointer">
+                        <Link href="/venture-building" className="p-4 md:p-6 border-2 border-primary bg-primary/10 text-center space-y-2 shadow-[0_0_20px_rgba(0,255,65,0.1)] hover:bg-primary/20 transition-colors cursor-pointer min-w-[140px]">
                             <div className="text-[10px] font-black text-primary uppercase tracking-widest">Resultado</div>
-                            <p className="text-xs font-black uppercase tracking-tighter leading-tight">Construímos SaaS e Geramos Equity</p>
+                            <p className="text-xs font-black uppercase tracking-tighter leading-tight break-words">Construímos SaaS e Geramos Equity</p>
                         </Link>
                     </div>
 

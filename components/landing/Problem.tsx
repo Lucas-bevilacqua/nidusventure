@@ -7,23 +7,28 @@ import { X, Check } from "lucide-react";
 const comparison = [
     {
         label: "Abordagem",
-        traditional: "Vende ferramenta",
-        nidus: "Questiona SE você precisa",
+        traditional: "Vende ferramenta de IA",
+        nidus: "Diagnóstico real do sistema",
     },
     {
-        label: "Processo",
+        label: "Foco",
         traditional: "Automatiza o que você pede",
-        nidus: "Elimina o desnecessário ANTES",
+        nidus: "Elimina o que não gera valor",
+    },
+    {
+        label: "Entrega",
+        traditional: "Slides e Recomendações",
+        nidus: "Implementação funcionando",
     },
     {
         label: "Ponto de partida",
-        traditional: "Começa pela tecnologia",
-        nidus: "Começa pelo sistema",
+        traditional: "Tecnologia",
+        nidus: "Resultado (Economia Real)",
     },
     {
-        label: "Expectativa",
-        traditional: "Promete resultado em 30 dias",
-        nidus: "Funciona na 1ª tentativa",
+        label: "Investimento",
+        traditional: "Focado em software",
+        nidus: "Focado em ROI",
     },
 ];
 
@@ -41,14 +46,13 @@ export function Problem() {
                             className="space-y-6"
                         >
                             <h2 className="text-5xl md:text-7xl font-black italic uppercase leading-[1] md:leading-[0.95] tracking-tighter">
-                                O mercado <br />
-                                <span className="text-primary italic">vende promessas.</span> <br />
-                                Eu entrego <br />
-                                <span className="underline decoration-primary/30">lucro.</span>
+                                Por que as <br />
+                                <span className="text-primary italic">soluções falham?</span>
                             </h2>
 
                             <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed max-w-xl">
-                                Muitas empresas falham ao usar IA porque tentam automatizar processos que já estão quebrados. Nós primeiro consertamos o fluxo para depois escalar o resultado.
+                                Consultorias tradicionais automatizam processos que nem deveriam existir. Elas focam na ferramenta antes de entender o fluxo. <br className="hidden md:block" />
+                                <span className="text-white">Resultado: você gasta e continua com a mesma dor.</span>
                             </p>
 
                             <div className="pt-4">
@@ -60,12 +64,12 @@ export function Problem() {
                     </div>
 
                     {/* Right side: Comparison Table */}
-                    <div className="lg:col-span-12 xl:col-span-7 w-full">
+                    <div className="lg:col-span-12 xl:col-span-7 w-full overflow-x-auto">
                         <motion.div
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="border-2 border-border bg-card/10 overflow-hidden shadow-[15px_15px_0px_rgba(0,255,65,0.05)]"
+                            className="border-2 border-border bg-card/10 overflow-hidden shadow-[15px_15px_0px_rgba(0,255,65,0.05)] min-w-[600px]"
                         >
                             <div className="grid grid-cols-3 border-b-2 border-border bg-secondary/30">
                                 <div className="p-4 md:p-8 border-r-2 border-border" />
@@ -80,15 +84,15 @@ export function Problem() {
                             {comparison.map((item, i) => (
                                 <div key={i} className="grid grid-cols-3 border-b-2 border-border last:border-0 hover:bg-white/5 transition-colors group">
                                     <div className="p-4 md:p-8 border-r-2 border-border flex items-center">
-                                        <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors">{item.label}</span>
+                                        <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-muted-foreground group-hover:text-primary transition-colors break-words">{item.label}</span>
                                     </div>
-                                    <div className="p-4 md:p-8 border-r-2 border-border flex items-center gap-4 text-sm md:text-lg text-muted-foreground/80 leading-tight">
-                                        <X className="w-5 h-5 text-destructive shrink-0" />
-                                        <span>{item.traditional}</span>
+                                    <div className="p-4 md:p-8 border-r-2 border-border flex items-center gap-3 md:gap-4 text-xs sm:text-sm md:text-lg text-muted-foreground/80 leading-tight">
+                                        <X className="w-4 h-4 md:w-5 md:h-5 text-destructive shrink-0" />
+                                        <span className="break-words">{item.traditional}</span>
                                     </div>
-                                    <div className="p-4 md:p-8 flex items-center gap-4 text-sm md:text-lg font-bold bg-primary/[0.03] leading-tight text-foreground">
-                                        <Check className="w-5 h-5 text-primary shrink-0" />
-                                        <span>{item.nidus}</span>
+                                    <div className="p-4 md:p-8 flex items-center gap-3 md:gap-4 text-xs sm:text-sm md:text-lg font-bold bg-primary/[0.03] leading-tight text-foreground">
+                                        <Check className="w-4 h-4 md:w-5 md:h-5 text-primary shrink-0" />
+                                        <span className="break-words">{item.nidus}</span>
                                     </div>
                                 </div>
                             ))}

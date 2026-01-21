@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${workSans.variable} ${syne.variable} antialiased bg-background text-foreground`}
+        className={`${workSans.variable} ${syne.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       >
         {children}
         <WhatsAppCTA />

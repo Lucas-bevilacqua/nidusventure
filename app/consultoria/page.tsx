@@ -112,7 +112,7 @@ export default function ConsultoriaPage() {
                                         ))}
                                     </ul>
                                     <div className="pt-8">
-                                        <Link href="/contato" className="block text-center px-10 py-6 border-2 border-primary text-primary font-black uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition-all">
+                                        <Link href="/contato?source=consultoria" className="block text-center px-6 md:px-10 py-4 md:py-6 border-2 border-primary text-primary font-black uppercase tracking-[0.3em] hover:bg-primary hover:text-primary-foreground transition-all text-sm md:text-base">
                                             Solicitar Proposta
                                         </Link>
                                     </div>
@@ -154,7 +154,7 @@ export default function ConsultoriaPage() {
                             Sua operação está pronta <br />
                             <span className="text-primary italic">para a escala real?</span>
                         </h2>
-                        <Link href="/contato" className="inline-block px-12 py-6 bg-primary text-primary-foreground font-black uppercase tracking-widest hover:shadow-[0_0_30px_rgba(0,255,65,0.4)] transition-all">
+                        <Link href="/contato?source=consultoria" className="inline-block px-8 md:px-12 py-4 md:py-6 bg-primary text-primary-foreground font-black uppercase tracking-widest hover:shadow-[0_0_30px_rgba(0,255,65,0.4)] transition-all text-sm md:text-base">
                             Começar Auditoria
                         </Link>
                     </div>

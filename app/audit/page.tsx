@@ -28,9 +28,9 @@ export default function AuditPage() {
                         <p className="text-xl text-muted-foreground leading-relaxed">
                             O diagnóstico que economiza meses de trabalho e milhares de reais em ferramentas erradas. Redesenhamos sua operação com foco em eficiência sistêmica.
                         </p>
-                        <div className="pt-4 flex gap-4">
-                            <Link href="/contato">
-                                <Button size="lg" className="rounded-full">Solicitar Auditoria — R$ 30k</Button>
+                        <div className="pt-4 flex gap-4 flex-wrap">
+                            <Link href="/contato?source=audit">
+                                <Button size="lg" className="rounded-full text-xs sm:text-sm px-4 sm:px-6">Solicitar Auditoria — R$ 30k</Button>
                             </Link>
                         </div>
                     </div>
@@ -98,8 +98,8 @@ export default function AuditPage() {
                         O Process Audit é ideal para empresas entre 50 e 500 funcionários que sentem que a operação está "pesada", lenta ou que já tentaram implementar IA sem sucesso.
                     </p>
                     <div className="flex justify-center pt-8">
-                        <Link href="/contato">
-                            <Button size="lg" className="rounded-full px-12">Falar com Especialista</Button>
+                        <Link href="/contato?source=audit">
+                            <Button size="lg" className="rounded-full px-6 sm:px-12 text-xs sm:text-sm">Falar com Especialista</Button>
                         </Link>
                     </div>
                 </Container>

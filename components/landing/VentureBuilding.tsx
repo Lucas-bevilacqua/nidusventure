@@ -30,7 +30,7 @@ export function VentureBuilding() {
                     <div className="lg:col-span-7 space-y-12">
                         <div className="space-y-4">
                             <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">
-                                Nosso <span className="text-primary">Pipeline</span>
+                                Nossos <span className="text-primary">Projetos</span>
                             </h2>
                             <p className="text-muted-foreground text-lg max-w-xl">
                                 Produtos que nasceram de dores reais resolvidas na nossa consultoria.
@@ -39,13 +39,13 @@ export function VentureBuilding() {
 
                         <div className="grid sm:grid-cols-2 gap-4">
                             {pipeline.map((item, i) => (
-                                <div key={i} className="p-8 border border-border bg-card/10 space-y-4 hover:border-primary/30 transition-colors group">
-                                    <item.icon className="w-8 h-8 text-primary/40 group-hover:text-primary transition-colors" />
+                                <div key={i} className="p-6 md:p-8 border border-border bg-card/10 space-y-4 hover:border-primary/30 transition-colors group overflow-hidden">
+                                    <item.icon className="w-6 h-6 md:w-8 md:h-8 text-primary/40 group-hover:text-primary transition-colors shrink-0" />
                                     <div className="space-y-1">
-                                        <h3 className="font-black uppercase tracking-widest text-lg">{item.name}</h3>
+                                        <h3 className="font-black uppercase tracking-widest text-base md:text-lg break-words">{item.name}</h3>
                                         <span className="text-[10px] text-primary font-bold uppercase tracking-widest">{item.status}</span>
                                     </div>
-                                    <p className="text-sm text-muted-foreground leading-relaxed">
+                                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed break-words">
                                         {item.desc}
                                     </p>
                                 </div>
@@ -59,18 +59,18 @@ export function VentureBuilding() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            className="p-10 border-2 border-primary bg-primary/5 space-y-8 relative overflow-hidden"
+                            className="p-6 md:p-10 border-2 border-primary bg-primary/5 space-y-6 md:space-y-8 relative overflow-hidden"
                         >
                             <div className="absolute top-0 right-0 p-4 rotate-12 opacity-10">
                                 <Users className="w-32 h-32 text-primary" />
                             </div>
 
-                            <div className="space-y-4 relative">
-                                <h3 className="text-3xl font-black italic uppercase tracking-tighter">
+                            <div className="space-y-3 md:space-y-4 relative">
+                                <h3 className="text-2xl md:text-3xl font-black italic uppercase tracking-tighter">
                                     Be a Co-founder <br />
                                     with Nidus
                                 </h3>
-                                <p className="text-muted-foreground font-medium">
+                                <p className="text-sm md:text-base text-muted-foreground font-medium break-words">
                                     Buscamos talentos técnicos e de Growth para liderar as novas verticais que estamos incubando.
                                 </p>
                             </div>
@@ -88,8 +88,8 @@ export function VentureBuilding() {
                                 ))}
                             </ul>
 
-                            <Link href="/contato" className="block relative">
-                                <Button className="w-full rounded-none bg-primary text-primary-foreground font-black uppercase tracking-widest py-6 hover:shadow-[0_0_20px_rgba(0,255,65,0.4)] transition-all">
+                            <Link href="/contato?source=venture-building" className="block relative">
+                                <Button className="w-full rounded-none bg-primary text-primary-foreground font-black uppercase tracking-widest py-5 md:py-6 text-xs md:text-sm hover:shadow-[0_0_20px_rgba(0,255,65,0.4)] transition-all">
                                     Apply for Partnership <ArrowRight className="ml-2 w-4 h-4" />
                                 </Button>
                             </Link>
@@ -106,7 +106,7 @@ export function VentureBuilding() {
                 >
                     <div className="text-center">
                         <h3 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter">
-                            O Ciclo de <span className="text-primary italic">Build.</span>
+                            O Ciclo de <span className="text-primary italic">Construção.</span>
                         </h3>
                     </div>
 

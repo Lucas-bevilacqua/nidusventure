@@ -124,7 +124,7 @@ export default function VentureBuildingPage() {
                             <p className="text-xl md:text-2xl text-muted-foreground font-medium leading-relaxed">
                                 Estamos sempre em busca de Product Engineers e Growth Masters que queiram 'skin in the game' para liderar nossas próximas verticais.
                             </p>
-                            <Link href="/contato" className="inline-block px-12 py-6 bg-primary text-primary-foreground font-black uppercase tracking-widest hover:shadow-[0_0_40px_rgba(0,255,65,0.5)] transition-all">
+                            <Link href="/contato?source=venture-building" className="inline-block px-8 md:px-12 py-4 md:py-6 bg-primary text-primary-foreground font-black uppercase tracking-widest hover:shadow-[0_0_40px_rgba(0,255,65,0.5)] transition-all text-sm md:text-base">
                                 Apply for Partnership
                             </Link>
                         </div>

@@ -21,11 +21,11 @@ export function Navbar() {
 
     return (
         <nav className={cn(
-            "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-            scrolled || isOpen ? "bg-background/80 backdrop-blur-md border-b border-border py-4" : "bg-transparent py-6"
+            "fixed top-0 left-0 right-0 z-50 transition-all duration-300 overflow-x-hidden",
+            scrolled || isOpen ? "bg-background/80 backdrop-blur-md border-b border-border py-3 sm:py-4" : "bg-transparent py-4 sm:py-6"
         )}>
             <Container className="flex items-center justify-between">
-                <Link href="/" className="text-2xl font-black tracking-tighter italic uppercase">
+                <Link href="/" className="text-xl sm:text-2xl font-black tracking-tighter italic uppercase truncate">
                     NIDUS<span className="text-primary">VENTURES</span>
                 </Link>
 
@@ -46,8 +46,8 @@ export function Navbar() {
                             </Link>
                         );
                     })}
-                    <Link href="/contato">
-                        <button className="px-6 py-2 bg-primary text-primary-foreground text-[10px] font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,255,65,0.4)] transition-all">
+                    <Link href="/contato?source=navbar">
+                        <button className="px-4 sm:px-6 py-2 bg-primary text-primary-foreground text-[10px] font-black uppercase tracking-widest hover:shadow-[0_0_20px_rgba(0,255,65,0.4)] transition-all">
                             Agendar Call
                         </button>
                     </Link>
@@ -88,8 +88,8 @@ export function Navbar() {
                                     </Link>
                                 );
                             })}
-                            <Link href="/contato" onClick={() => setIsOpen(false)}>
-                                <button className="w-full py-6 bg-primary text-primary-foreground text-xs font-black uppercase tracking-widest mt-8">
+                            <Link href="/contato?source=navbar" onClick={() => setIsOpen(false)}>
+                                <button className="w-full py-4 sm:py-6 bg-primary text-primary-foreground text-xs font-black uppercase tracking-widest mt-6 sm:mt-8">
                                     Agendar Call
                                 </button>
                             </Link>
