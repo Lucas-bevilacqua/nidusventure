@@ -92,15 +92,15 @@ export function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="w-full max-w-5xl mt-8 sm:mt-12 aspect-[21/9] border border-border/50 rounded-xl bg-card/30 flex items-center justify-center relative overflow-hidden group"
+                        className="w-full max-w-5xl mt-8 sm:mt-12 min-h-[120px] sm:min-h-[140px] md:aspect-[21/9] border border-border/50 rounded-xl bg-card/30 flex items-center justify-center relative overflow-hidden group px-2 sm:px-4"
                     >
                         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-                        <div className="relative text-xs text-muted-foreground font-mono flex gap-4 md:gap-8 items-center max-md:flex-col p-4 flex-wrap max-md:justify-center">
-                            <div className="p-2 md:p-3 border border-border rounded bg-background shadow-sm whitespace-nowrap">SISTEMA</div>
-                            <ArrowRight className="w-4 h-4 text-primary shrink-0" />
-                            <div className="p-2 md:p-3 border border-border rounded bg-background shadow-sm whitespace-nowrap">FLUXO</div>
-                            <ArrowRight className="w-4 h-4 text-primary shrink-0" />
-                            <div className="p-2 md:p-3 border border-primary/50 rounded bg-background shadow-md text-foreground whitespace-nowrap">FERRAMENTA (IA)</div>
+                        <div className="relative text-[10px] sm:text-xs text-muted-foreground font-mono flex gap-2 sm:gap-3 md:gap-4 lg:gap-8 items-center flex-wrap justify-center p-2 sm:p-4 w-full">
+                            <div className="p-1.5 sm:p-2 md:p-3 border border-border rounded bg-background shadow-sm text-center">SISTEMA</div>
+                            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-primary shrink-0 rotate-90 sm:rotate-0" />
+                            <div className="p-1.5 sm:p-2 md:p-3 border border-border rounded bg-background shadow-sm text-center">FLUXO</div>
+                            <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-primary shrink-0 rotate-90 sm:rotate-0" />
+                            <div className="p-1.5 sm:p-2 md:p-3 border border-primary/50 rounded bg-background shadow-md text-foreground text-center">FERRAMENTA (IA)</div>
                         </div>
 
                         {/* Animated scanning line */}
