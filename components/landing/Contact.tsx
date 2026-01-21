@@ -63,13 +63,13 @@ export function Contact({ source = "contato", title = "Análise Gratuita", subti
                         </div>
 
                         <div className="space-y-3 md:space-y-4">
-                            <a href="mailto:contato@nidus.ventures" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 border-2 border-border hover:border-primary transition-all group overflow-hidden">
+                            <a href="mailto:contato@nidusventures.com.br" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 border-2 border-border hover:border-primary transition-all group overflow-hidden">
                                 <div className="p-3 md:p-4 bg-primary/10 text-primary shrink-0">
                                     <Mail className="w-5 h-5 md:w-6 md:h-6" />
                                 </div>
                                 <div className="space-y-1 min-w-0">
                                     <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">E-mail</p>
-                                    <p className="font-bold text-sm md:text-base text-white group-hover:text-primary transition-colors break-words">contato@nidus.ventures</p>
+                                    <p className="font-bold text-sm md:text-base text-white group-hover:text-primary transition-colors break-words">contato@nidusventures.com.br</p>
                                 </div>
                             </a>
                             <a href="https://calendly.com/lucas-bevilacqua/diagnostico" target="_blank" className="flex items-center gap-4 md:gap-6 p-4 md:p-6 border-2 border-border hover:border-primary transition-all group overflow-hidden">

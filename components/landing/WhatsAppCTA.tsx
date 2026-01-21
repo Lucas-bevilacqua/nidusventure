@@ -6,7 +6,7 @@ import { MessageSquare } from "lucide-react";
 export function WhatsAppCTA() {
     return (
         <motion.a
-            href="https://wa.me/5511999999999" // TODO: Replace with actual number
+            href="https://wa.me/54996758327"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, scale: 0.5, y: 50 }}
