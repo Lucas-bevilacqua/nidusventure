@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export function Hero() {
     return (
-        <section className="relative pt-32 pb-16 md:pt-48 md:pb-32 overflow-hidden">
+        <section className="relative pt-24 sm:pt-32 md:pt-48 pb-12 sm:pb-16 md:pb-32 overflow-x-hidden">
             {/* Background Glows */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-primary/5 blur-[120px] rounded-full -z-10" />
 
@@ -92,7 +92,7 @@ export function Hero() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        className="w-full max-w-5xl mt-12 aspect-[21/9] border border-border/50 rounded-xl bg-card/30 flex items-center justify-center relative overflow-hidden group"
+                        className="w-full max-w-5xl mt-8 sm:mt-12 aspect-[21/9] border border-border/50 rounded-xl bg-card/30 flex items-center justify-center relative overflow-hidden group"
                     >
                         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
                         <div className="relative text-xs text-muted-foreground font-mono flex gap-4 md:gap-8 items-center max-md:flex-col p-4 flex-wrap max-md:justify-center">

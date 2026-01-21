@@ -53,17 +53,17 @@ export default function ConsultoriaPage() {
             <Navbar />
 
             {/* Hero */}
-            <section className="pt-40 pb-24 border-b-2 border-border">
+            <section className="pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-20 md:pb-24 border-b-2 border-border overflow-x-hidden">
                 <Container>
-                    <div className="max-w-4xl space-y-8">
+                    <div className="max-w-4xl space-y-6 md:space-y-8">
                         <span className="text-primary text-xs font-black uppercase tracking-[0.4em]">
                             Professional Services
                         </span>
-                        <h1 className="text-6xl md:text-9xl font-black italic uppercase leading-[0.8] tracking-tighter">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-black italic uppercase leading-[0.9] sm:leading-[0.8] tracking-tighter break-words px-4">
                             RESOLVEMOS <br />
-                            <span className="text-white/20 text-5xl md:text-8xl">O HOJE.</span>
+                            <span className="text-white/20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl">O HOJE.</span>
                         </h1>
-                        <p className="text-2xl md:text-3xl font-medium text-muted-foreground leading-tight italic max-w-2xl">
+                        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-muted-foreground leading-tight italic max-w-2xl break-words px-4">
                             Consultoria para empresas B2B que precisam de escala operacional imediata através de arquitetura de sistemas inteligência.
                         </p>
                     </div>
@@ -71,33 +71,33 @@ export default function ConsultoriaPage() {
             </section>
 
             {/* Offerings */}
-            <section className="py-24">
+            <section className="py-16 sm:py-20 md:py-24 overflow-x-hidden">
                 <Container>
-                    <div className="space-y-32">
+                    <div className="space-y-16 md:space-y-24 lg:space-y-32">
                         {offerings.map((offering, i) => (
-                            <div key={i} className="grid lg:grid-cols-12 gap-16 items-start group">
-                                <div className="lg:col-span-5 space-y-8">
-                                    <div className="space-y-4">
-                                        <div className="p-4 bg-primary/10 border-2 border-primary/20 inline-block">
-                                            <offering.icon className="w-12 h-12 text-primary" />
+                            <div key={i} className="grid lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start group">
+                                <div className="lg:col-span-5 space-y-6 md:space-y-8">
+                                    <div className="space-y-3 md:space-y-4">
+                                        <div className="p-3 sm:p-4 bg-primary/10 border-2 border-primary/20 inline-block">
+                                            <offering.icon className="w-10 h-10 sm:w-12 sm:h-12 text-primary" />
                                         </div>
-                                        <h2 className="text-5xl font-black italic uppercase tracking-tighter group-hover:text-primary transition-colors leading-none">
+                                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black italic uppercase tracking-tighter group-hover:text-primary transition-colors leading-none break-words">
                                             {offering.title}
                                         </h2>
-                                        <p className="text-xs font-black uppercase tracking-[0.4em] text-muted-foreground">{offering.subtitle}</p>
+                                        <p className="text-xs font-black uppercase tracking-[0.4em] text-muted-foreground break-words">{offering.subtitle}</p>
                                     </div>
-                                    <p className="text-xl text-muted-foreground font-medium leading-relaxed">
+                                    <p className="text-base sm:text-lg md:text-xl text-muted-foreground font-medium leading-relaxed break-words">
                                         {offering.desc}
                                     </p>
-                                    <div className="p-6 border-l-4 border-primary bg-white/[0.02]">
+                                    <div className="p-4 sm:p-6 border-l-4 border-primary bg-white/[0.02]">
                                         <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground block mb-1">Investment</span>
-                                        <span className="text-xl font-bold text-white tracking-widest">{offering.pricing}</span>
+                                        <span className="text-lg sm:text-xl font-bold text-white tracking-widest break-words">{offering.pricing}</span>
                                     </div>
                                 </div>
 
                                 <div className="lg:col-span-1 hidden lg:block" />
 
-                                <div className="lg:col-span-6 border-2 border-border p-10 md:p-16 space-y-12 bg-card/10">
+                                <div className="lg:col-span-6 border-2 border-border p-6 sm:p-8 md:p-10 lg:p-16 space-y-8 md:space-y-12 bg-card/10 overflow-hidden">
                                     <h3 className="text-xs font-black uppercase tracking-[0.5em] text-primary">Deliverables</h3>
                                     <ul className="space-y-6">
                                         {offering.deliverables.map((item, idx) => (
@@ -124,10 +124,10 @@ export default function ConsultoriaPage() {
             </section>
 
             {/* Why Nidus */}
-            <section className="py-24 bg-primary/5 border-y-2 border-border">
+            <section className="py-16 sm:py-20 md:py-24 bg-primary/5 border-y-2 border-border overflow-x-hidden">
                 <Container>
-                    <div className="text-center space-y-16">
-                        <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter">
+                    <div className="text-center space-y-12 md:space-y-16">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tighter break-words px-4">
                             Por que confiar <br /> na nossa arquitetura?
                         </h2>
                         <div className="grid md:grid-cols-3 gap-8 text-left">
@@ -147,10 +147,10 @@ export default function ConsultoriaPage() {
             </section>
 
             {/* Final CTA */}
-            <section className="py-24 text-center">
+            <section className="py-16 sm:py-20 md:py-24 text-center overflow-x-hidden">
                 <Container>
-                    <div className="max-w-2xl mx-auto space-y-12">
-                        <h2 className="text-4xl font-black italic uppercase tracking-tighter">
+                    <div className="max-w-2xl mx-auto space-y-8 md:space-y-12 px-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black italic uppercase tracking-tighter break-words">
                             Sua operação está pronta <br />
                             <span className="text-primary italic">para a escala real?</span>
                         </h2>

@@ -20,12 +20,12 @@ export default function AuditPage() {
             <Navbar />
 
             {/* Hero Service */}
-            <section className="pt-32 pb-20 bg-secondary/20 border-b border-border">
+            <section className="pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-18 md:pb-20 bg-secondary/20 border-b border-border overflow-x-hidden">
                 <Container>
-                    <div className="max-w-3xl space-y-6">
+                    <div className="max-w-3xl space-y-4 md:space-y-6 px-4">
                         <span className="text-xs font-bold uppercase tracking-widest text-primary">Serviço Premium</span>
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tight">Process Audit & IA Blueprint</h1>
-                        <p className="text-xl text-muted-foreground leading-relaxed">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight break-words">Process Audit & IA Blueprint</h1>
+                        <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed break-words">
                             O diagnóstico que economiza meses de trabalho e milhares de reais em ferramentas erradas. Redesenhamos sua operação com foco em eficiência sistêmica.
                         </p>
                         <div className="pt-4 flex gap-4 flex-wrap">
@@ -38,9 +38,9 @@ export default function AuditPage() {
             </section>
 
             {/* Detailed Steps */}
-            <section className="py-24">
+            <section className="py-16 sm:py-20 md:py-24 overflow-x-hidden">
                 <Container>
-                    <div className="grid md:grid-cols-2 gap-16">
+                    <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
                         <div className="space-y-12">
                             <h2 className="text-3xl font-bold">O que entregamos em 3 semanas</h2>
                             <div className="space-y-8">
@@ -91,10 +91,10 @@ export default function AuditPage() {
             </section>
 
             {/* FAQ / Final CTA */}
-            <section className="py-24 bg-secondary/30">
-                <Container className="text-center space-y-8">
-                    <h2 className="text-3xl font-bold italic">"Isso serve para minha empresa?"</h2>
-                    <p className="max-w-2xl mx-auto text-muted-foreground">
+            <section className="py-16 sm:py-20 md:py-24 bg-secondary/30 overflow-x-hidden">
+                <Container className="text-center space-y-6 md:space-y-8">
+                    <h2 className="text-2xl sm:text-3xl font-bold italic break-words px-4">"Isso serve para minha empresa?"</h2>
+                    <p className="max-w-2xl mx-auto text-sm sm:text-base text-muted-foreground break-words px-4">
                         O Process Audit é ideal para empresas entre 50 e 500 funcionários que sentem que a operação está "pesada", lenta ou que já tentaram implementar IA sem sucesso.
                     </p>
                     <div className="flex justify-center pt-8">
