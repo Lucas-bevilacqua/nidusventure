@@ -1,25 +1,15 @@
-"use client";
-
 import { Container } from "@/components/ui/container";
 import { Navbar } from "@/components/landing/Navbar";
 import { cases } from "@/lib/data/cases";
-import { useParams, notFound } from "next/navigation";
-import { motion } from "framer-motion";
-import { ArrowLeft, CheckCircle2 } from "lucide-react";
+import { notFound } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { MarkdownContent } from "@/components/blog/MarkdownContent";
 
-// Gerar rotas estáticas para todos os cases no build time
-export async function generateStaticParams() {
-    return cases.map((c) => ({
-        slug: c.slug,
-    }));
-}
-
-export default function CaseDetailPage() {
-    const params = useParams();
-    const slug = params.slug as string;
-    const caseStudy = cases.find((c) => c.slug === slug);
+export default async function CaseDetailPage({ params }: { params: Promise<{ slug: string }> | { slug: string } }) {
+    // Next.js 16 pode passar params como Promise
+    const resolvedParams = await Promise.resolve(params);
+    const caseStudy = cases.find((c) => c.slug === resolvedParams.slug);
 
     if (!caseStudy) {
         notFound();
