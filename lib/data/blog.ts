@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
         excerpt: "O método simples que economizou R$ 2M em projetos que iam falhar. Por que a tecnologia deve ser a sua última preocupação.",
         category: "Metodologia",
         date: "18 Jan, 2024",
-        readTime: "7 min",
+        readTime: "13 min",
         metaDescription: "Descubra o framework Sistema → Fluxo → Ferramenta que economizou R$ 2 milhões em projetos de automação. Aprenda por que começar pela tecnologia é o maior erro em eficiência operacional.",
         keywords: ["automação", "eficiencia operacional", "sistemas", "processos", "ROI", "metodologia", "framework"],
         author: "Lucas Bevilacqua",
@@ -134,6 +134,42 @@ Quem segue essa ordem economiza milhões. Quem inverte, perde.
 ---
 
 **Quer aplicar o framework na sua operação?** [Agende um diagnóstico gratuito](/contato?source=blog-sistema-fluxo-ferramenta) e descubra onde sua empresa está perdendo dinheiro.
+
+## FAQ: Perguntas Frequentes sobre Sistema → Fluxo → Ferramenta
+
+### 1. Por que começar pelo sistema e não pela ferramenta?
+
+Começar pela ferramenta é como comprar um martelo e depois procurar pregos. Você acaba forçando processos que não deveriam existir a se encaixarem na ferramenta. Quando você começa pelo sistema, você questiona se o processo deveria existir. Isso economiza milhões.
+
+### 2. Quanto tempo leva para aplicar o framework?
+
+O diagnóstico inicial leva de 1 a 2 semanas. A implementação varia, mas a maioria dos projetos vê resultados em 30 dias. O importante é que você economiza tempo e dinheiro desde o primeiro dia, porque elimina processos desnecessários imediatamente.
+
+### 3. Funciona para empresas de qualquer tamanho?
+
+Sim. O framework funciona para empresas de 10 a 10.000 funcionários. A diferença é a escala do problema, não a metodologia. Empresas menores veem resultados mais rápidos, empresas maiores veem economias maiores.
+
+### 4. E se eu já investi em ferramentas?
+
+Não é tarde. O framework pode ser aplicado mesmo depois de investir em ferramentas. Muitas vezes descobrimos que a ferramenta está certa, mas o processo que ela automatiza está errado. Redesenhamos o processo e a ferramenta passa a fazer sentido.
+
+### 5. Como medir o ROI do framework?
+
+ROI = (Economia - Investimento) / Investimento × 100. Mas o framework muitas vezes gera ROI infinito porque elimina custos sem investir em tecnologia. Exemplo: eliminar 90% dos campos de um formulário economiza R$ 280k/ano com R$ 0 de investimento.
+
+### 6. Preciso de conhecimento técnico para aplicar?
+
+Não. O framework é sobre pensamento sistêmico, não sobre tecnologia. Você precisa questionar processos, não programar. A NIDUS aplica o framework e entrega a implementação funcionando.
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     },
     {
@@ -142,7 +178,7 @@ Quem segue essa ordem economiza milhões. Quem inverte, perde.
         excerpt: "Automatizar um processo ruim só faz o erro ser mais rápido. Descubra por que a pergunta não é 'qual IA usar', mas 'por que o problema existe'.",
         category: "Anti-Hype",
         date: "20 Jan, 2024",
-        readTime: "5 min",
+        readTime: "12 min",
         metaDescription: "Por que 80% das empresas não veem ROI em projetos de IA? Descubra o erro fatal: automatizar processos que não deveriam existir. Análise real de R$ 50 bilhões gastos em 2024.",
         keywords: ["IA", "inteligencia artificial", "ROI", "automação", "transformação digital", "eficiencia", "processos"],
         content: `
@@ -263,6 +299,42 @@ O hype da IA fez empresas esquecerem o básico: **sistemas antes de ferramentas*
 ---
 
 **Quer descobrir onde sua empresa está perdendo dinheiro com processos ruins?** [Agende um diagnóstico gratuito](/contato?source=blog-ia-hype) e descubra o que realmente precisa ser automatizado.
+
+## FAQ: Perguntas Frequentes sobre IA e ROI
+
+### 1. Por que 80% das empresas não veem ROI em IA?
+
+Porque começam pela ferramenta, não pelo sistema. Elas escolhem ChatGPT ou Zapier e tentam encaixar processos neles. O problema é que muitos desses processos não deveriam existir. Automação não resolve problemas de design.
+
+### 2. Como saber se minha empresa precisa de IA?
+
+A pergunta certa não é "preciso de IA?", mas "por que esse problema existe?". Se o problema é de processo mal desenhado, IA não resolve. Se o processo está certo e só precisa de escala, aí sim IA pode ajudar.
+
+### 3. Quanto custa implementar IA corretamente?
+
+Depende. Mas muitas vezes a resposta é R$ 0, porque o problema não é de tecnologia. Redesenhar processos elimina a necessidade de IA. Quando IA é necessária, o investimento varia de R$ 10k a R$ 200k, mas o ROI deve ser calculado antes.
+
+### 4. Qual ferramenta de IA é melhor?
+
+A melhor ferramenta é a que resolve seu problema específico. Mas antes de escolher ferramenta, você precisa ter o sistema certo e o fluxo otimizado. Só então escolha a ferramenta. Muitas vezes, a resposta é "nenhuma ferramenta".
+
+### 5. Como medir ROI de projetos de IA?
+
+ROI = (Economia - Investimento) / Investimento × 100. Mas cuidado: medir "automações implementadas" não é ROI. Medir "R$ economizados" é ROI. Exemplo: R$ 50k investidos, R$ 200k economizados = 300% de ROI.
+
+### 6. Posso aplicar IA sozinho ou preciso de consultoria?
+
+Depende do seu conhecimento em pensamento sistêmico. Se você sabe questionar processos e redesenhar sistemas, pode aplicar sozinho. Se não, uma consultoria especializada economiza tempo e dinheiro, evitando erros caros.
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     },
     {
@@ -271,7 +343,7 @@ O hype da IA fez empresas esquecerem o básico: **sistemas antes de ferramentas*
         excerpt: "Você está economizando minutos ou dias? Saiba a diferença entre automatizar tarefas chatas e eliminar o trabalho inútil.",
         category: "Educação",
         date: "15 Jan, 2024",
-        readTime: "6 min",
+        readTime: "11 min",
         metaDescription: "Descubra os 3 níveis de automação: tarefas, processos e sistemas. Aprenda por que 90% das empresas ficam presas no nível 1 e como subir para o nível 3.",
         keywords: ["automação", "eficiencia", "processos", "sistemas", "produtividade", "ROI", "otimização"],
         content: `
@@ -423,6 +495,48 @@ Os 3 níveis de automação não são sobre tecnologia. São sobre pensamento si
 ---
 
 **Quer descobrir em que nível sua empresa está?** [Agende um diagnóstico gratuito](/contato?source=blog-3-niveis) e descubra onde você pode subir de nível.
+
+## FAQ: Perguntas Frequentes sobre os 3 Níveis de Automação
+
+### 1. Como sei em que nível minha empresa está?
+
+Faça estas perguntas:
+- Quantas horas por semana você gasta em tarefas repetitivas? (Se > 10h: Nível 1)
+- Quantos processos você eliminou no último ano? (Se = 0: Nível 1 ou 2)
+- Qual foi o maior ROI de automação? (Se < R$ 50k: Nível 1 ou 2)
+
+### 2. É possível pular do Nível 1 direto para o Nível 3?
+
+Sim, mas requer pensamento sistêmico. A maioria das empresas precisa passar pelo Nível 2 para entender processos. Mas se você questionar "isso deveria existir?" desde o início, pode ir direto para eliminação.
+
+### 3. Quanto tempo leva para subir de nível?
+
+Depende. Nível 1 para 2: 1-3 meses. Nível 2 para 3: 3-6 meses. Mas você pode acelerar com consultoria especializada que já aplica o framework Sistema → Fluxo → Ferramenta.
+
+### 4. Qual nível gera mais ROI?
+
+Nível 3 gera 10x mais ROI que Nível 1. Exemplo: Nível 1 economiza R$ 2k/ano por tarefa. Nível 3 economiza R$ 280k/ano eliminando processos. A diferença é eliminar vs automatizar.
+
+### 5. Preciso de tecnologia para o Nível 3?
+
+Não necessariamente. Nível 3 é sobre eliminar processos, não automatizá-los. Muitas vezes você elimina processos sem precisar de tecnologia. Quando precisa, a tecnologia é escolhida depois de ter o sistema certo.
+
+### 6. Como medir se subi de nível?
+
+Métricas:
+- Nível 1: Minutos economizados por tarefa
+- Nível 2: Horas economizadas por processo
+- Nível 3: Dias economizados ou R$ economizados eliminando processos
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     },
     {
@@ -431,7 +545,7 @@ Os 3 níveis de automação não são sobre tecnologia. São sobre pensamento si
         excerpt: "Consultorias automatizam processos que nem deveriam existir. Elas focam na ferramenta antes de entender o fluxo. Resultado: você gasta e continua com a mesma dor.",
         category: "Anti-Hype",
         date: "22 Jan, 2024",
-        readTime: "8 min",
+        readTime: "14 min",
         metaDescription: "Descubra por que 80% dos projetos de consultoria falham. A diferença entre consultorias tradicionais e pensamento sistêmico real. Casos reais de R$ 2M economizados.",
         keywords: ["consultoria", "eficiencia operacional", "sistemas", "processos", "ROI", "transformação digital"],
         content: `
@@ -614,6 +728,52 @@ Consultorias tradicionais falham porque focam em ferramentas. Consultorias que f
 ---
 
 **Quer uma consultoria que funciona?** [Agende um diagnóstico gratuito](/contato?source=blog-consultorias) e descubra a diferença entre automatizar e eliminar.
+
+## FAQ: Perguntas Frequentes sobre Consultorias
+
+### 1. Como escolher uma consultoria que funciona?
+
+Pergunte:
+- Eles questionam seus processos ou só automatizam?
+- Eles entregam implementação ou só slides?
+- Eles medem ROI ou só atividade?
+- Eles começam pela tecnologia ou pelo sistema?
+
+Se alguma resposta for negativa, cuidado.
+
+### 2. Qual a diferença entre consultoria tradicional e NIDUS?
+
+Consultoria tradicional: Vende ferramenta, automatiza o que você pede, entrega slides.
+NIDUS: Questiona sistema, elimina o desnecessário, entrega implementação funcionando.
+
+### 3. Quanto custa uma consultoria que funciona?
+
+Depende do escopo. Mas o importante não é o custo, é o ROI. Uma consultoria de R$ 50k que gera R$ 500k de economia é melhor que uma de R$ 20k que gera R$ 0.
+
+### 4. Quanto tempo leva para ver resultados?
+
+Com NIDUS, você vê resultados em 30 dias. Porque começamos eliminando o desnecessário, que gera economia imediata. Depois otimizamos e implementamos.
+
+### 5. Preciso de conhecimento técnico para trabalhar com consultoria?
+
+Não. A consultoria deve entregar implementação funcionando, não apenas recomendações. Você não precisa saber programar para ter sistemas que funcionam.
+
+### 6. Como medir se a consultoria funcionou?
+
+Métricas:
+- ROI positivo em 90 dias
+- Processos eliminados (não só automatizados)
+- Economia real em R$, não em "automações implementadas"
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     },
     {
@@ -622,7 +782,7 @@ Consultorias tradicionais falham porque focam em ferramentas. Consultorias que f
         excerpt: "Você mede ROI por 'automações implementadas' ou por 'R$ economizados'? Descubra como empresas que medem certo economizam 10x mais.",
         category: "Educação",
         date: "25 Jan, 2024",
-        readTime: "6 min",
+        readTime: "11 min",
         metaDescription: "Aprenda a medir ROI real em automação. Descubra por que 80% das empresas medem errado e como calcular economia real vs atividade. Casos reais de R$ 2M economizados.",
         keywords: ["ROI", "automação", "eficiencia", "métricas", "KPIs", "economia", "processos"],
         content: `
@@ -810,6 +970,55 @@ Se alguma resposta for "não", você provavelmente está medindo errado.
 ---
 
 **Quer descobrir o ROI real da sua operação?** [Agende um diagnóstico gratuito](/contato?source=blog-roi) e descubra onde sua empresa está perdendo dinheiro.
+
+## FAQ: Perguntas Frequentes sobre ROI em Automação
+
+### 1. Como calcular ROI antes de investir?
+
+Passo 1: Meça o custo atual (horas × custo hora).
+Passo 2: Calcule a economia potencial (tempo economizado × custo hora).
+Passo 3: Compare com investimento (ROI = (Economia - Investimento) / Investimento × 100).
+
+### 2. Qual ROI é considerado bom?
+
+ROI de 100%+ em 12 meses é bom. Mas o melhor ROI é infinito: eliminar processos sem investir em tecnologia. Exemplo: Eliminar 90% dos campos economiza R$ 280k/ano com R$ 0 investido.
+
+### 3. Como medir ROI depois de implementar?
+
+Compare:
+- Custo antes vs custo depois
+- Horas antes vs horas depois
+- Erros antes vs erros depois
+
+Multiplique diferença pelo custo hora para ter economia em R$.
+
+### 4. ROI de eficiência vs ROI de eliminação: qual é melhor?
+
+ROI de eliminação é sempre melhor. Eficiência economiza tempo em processos existentes. Eliminação remove processos inteiros. Exemplo: Eficiência economiza 2h/semana. Eliminação economiza 40h/mês.
+
+### 5. E se meu ROI for negativo?
+
+Pare. Não continue investindo. O problema pode ser:
+- Processo não deveria existir (elimine, não automatize)
+- Ferramenta errada (escolha outra)
+- Implementação errada (revise o processo)
+
+### 6. Como garantir ROI positivo?
+
+Aplique o framework Sistema → Fluxo → Ferramenta:
+1. Sistema: "Isso deveria existir?" (elimine se não)
+2. Fluxo: "Qual o caminho mais direto?" (otimize)
+3. Ferramenta: "Preciso de tecnologia?" (só se necessário)
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     },
     {
@@ -818,7 +1027,7 @@ Se alguma resposta for "não", você provavelmente está medindo errado.
         excerpt: "Como empresas B2B escalam faturamento em 100% sem aumentar headcount proporcional. O segredo não é trabalhar mais, é trabalhar certo.",
         category: "Estratégia",
         date: "28 Jan, 2024",
-        readTime: "7 min",
+        readTime: "13 min",
         metaDescription: "Descubra como empresas B2B escalam sem aumentar custos proporcionalmente. Metodologia de eficiência operacional que gera margem real. Casos reais de escala.",
         keywords: ["eficiencia operacional", "B2B", "escala", "margem", "crescimento", "processos", "sistemas"],
         content: `
@@ -997,6 +1206,57 @@ Sistema de triagem permitiu dobrar leads processados sem aumentar time de vendas
 ---
 
 **Quer escalar sua operação B2B sem aumentar custos?** [Agende um diagnóstico gratuito](/contato?source=blog-eficiencia) e descubra onde sua empresa pode otimizar.
+
+## FAQ: Perguntas Frequentes sobre Eficiência Operacional B2B
+
+### 1. Como medir eficiência operacional?
+
+Fórmula: Eficiência = Receita / (Custo Operacional + Headcount)
+
+Exemplo: R$ 10M receita, R$ 6M custo, 50 pessoas = R$ 166k por pessoa.
+
+Meta: Aumentar eficiência sem aumentar proporcionalmente headcount.
+
+### 2. Qual a diferença entre escala falsa e escala real?
+
+Escala falsa: Mais pessoas, mais processos, mesma eficiência.
+Escala real: Mesmas pessoas, processos otimizados, mais eficiência.
+
+A diferença: Sistemas antes de headcount.
+
+### 3. Como escalar sem contratar?
+
+Aplicando o framework Sistema → Fluxo → Ferramenta:
+1. Elimine processos desnecessários
+2. Otimize processos que sobraram
+3. Automatize com sistemas (não pessoas)
+
+### 4. Quanto tempo leva para ver resultados?
+
+Resultados imediatos: Eliminação de processos (economia no primeiro dia).
+Resultados em 30 dias: Otimização de fluxos.
+Resultados em 90 dias: Sistemas implementados e rodando.
+
+### 5. Funciona para empresas de qualquer tamanho?
+
+Sim. O framework funciona para empresas de 10 a 10.000 funcionários. A diferença é a escala do problema, não a metodologia.
+
+### 6. Como garantir que a escala seja real?
+
+Métricas:
+- Receita por funcionário aumenta
+- Margem operacional aumenta
+- Headcount não aumenta proporcionalmente à receita
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     },
     {
@@ -1005,7 +1265,7 @@ Sistema de triagem permitiu dobrar leads processados sem aumentar time de vendas
         excerpt: "Empresas gastam R$ 100k em ferramentas para resolver problemas de processo. Descubra por que processos vêm primeiro e ferramentas por último.",
         category: "Metodologia",
         date: "30 Jan, 2024",
-        readTime: "6 min",
+        readTime: "11 min",
         metaDescription: "Descubra por que processos vêm antes de ferramentas. A diferença entre resolver problemas de design vs problemas de tecnologia. Casos reais de R$ 2M economizados.",
         keywords: ["processos", "ferramentas", "sistemas", "automação", "eficiencia", "ROI", "metodologia"],
         content: `
@@ -1191,6 +1451,53 @@ Se alguma resposta for "não", pare. Não escolha ferramenta ainda.
 ---
 
 **Quer descobrir se seu problema é de processo ou ferramenta?** [Agende um diagnóstico gratuito](/contato?source=blog-processos) e descubra a ordem certa.
+
+## FAQ: Perguntas Frequentes sobre Processos vs Ferramentas
+
+### 1. Como saber se meu problema é de processo ou ferramenta?
+
+Faça estas perguntas:
+1. "Isso deveria existir?" (Se não: problema de sistema, elimine)
+2. "O fluxo está otimizado?" (Se não: problema de fluxo, redesenhe)
+3. "Preciso de tecnologia?" (Se não: problema resolvido sem ferramenta)
+
+### 2. Por que processos vêm antes de ferramentas?
+
+90% dos problemas são de design de processo, não de tecnologia. Processos são o problema real. Ferramentas são apenas meio. ROI vem de processos certos, não de ferramentas caras.
+
+### 3. E se eu já investi em ferramentas?
+
+Não é tarde. O framework pode ser aplicado mesmo depois de investir. Muitas vezes descobrimos que a ferramenta está certa, mas o processo que ela automatiza está errado. Redesenhamos o processo e a ferramenta passa a fazer sentido.
+
+### 4. Quanto custa redesenhar processos vs comprar ferramentas?
+
+Redesenhar processos: R$ 0 (você só questiona e reorganiza).
+Comprar ferramentas: R$ 10k a R$ 200k.
+
+Muitas vezes, redesenhar processos resolve o problema sem precisar de ferramentas.
+
+### 5. Como aplicar a ordem certa?
+
+Framework Sistema → Fluxo → Ferramenta:
+1. SISTEMA: "Isso deveria existir?" (elimine se não)
+2. FLUXO: "Qual o caminho mais direto?" (otimize)
+3. FERRAMENTA: "Preciso de tecnologia?" (só se necessário)
+
+### 6. Qual o erro mais comum?
+
+90% priorizam errado: Ferramenta → Processo → Sistema.
+
+Ordem certa: Sistema → Processo → Ferramenta.
+
+## Sobre o Autor
+
+**Lucas Bevilacqua** é fundador da NIDUS Ventures, Venture Builder B2B SaaS especializada em eficiência operacional. Com mais de 5 anos de experiência em arquitetura de sistemas e automação inteligente, já economizou mais de R$ 2 milhões para clientes através do framework Sistema → Fluxo → Ferramenta.
+
+Lucas começou sua jornada como produtor multimídia, passando 12 horas por dia em tarefas repetitivas. Foi quando descobriu que o problema nunca foi "como fazer mais rápido", mas sim "por que esse processo existe?". Essa epifania o levou de executor a arquiteto de sistemas.
+
+Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas construam sistemas de lucro que funcionam na primeira tentativa.
+
+**Contato:** [contato@nidusventures.com.br](mailto:contato@nidusventures.com.br) | [WhatsApp](https://wa.me/54996758327)
         `
     }
 ];
