@@ -8,6 +8,9 @@ export interface BlogPost {
     metaDescription: string;
     keywords: string[];
     content: string;
+    author?: string;
+    publishedDate?: string;
+    imageUrl?: string;
 }
 
 export const blogPosts: BlogPost[] = [
@@ -20,6 +23,9 @@ export const blogPosts: BlogPost[] = [
         readTime: "7 min",
         metaDescription: "Descubra o framework Sistema → Fluxo → Ferramenta que economizou R$ 2 milhões em projetos de automação. Aprenda por que começar pela tecnologia é o maior erro em eficiência operacional.",
         keywords: ["automação", "eficiencia operacional", "sistemas", "processos", "ROI", "metodologia", "framework"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-18",
+        imageUrl: "https://nidusventures.com.br/og-sistema-fluxo-ferramenta.jpg",
         content: `
 # SISTEMA → FLUXO → FERRAMENTA: O Framework que Economizou R$ 2M
 
