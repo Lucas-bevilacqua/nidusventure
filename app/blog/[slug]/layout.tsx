@@ -9,8 +9,10 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-    const post = blogPosts.find(p => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> | { slug: string } }): Promise<Metadata> {
+    // Next.js 16 pode passar params como Promise
+    const resolvedParams = await Promise.resolve(params);
+    const post = blogPosts.find(p => p.slug === resolvedParams.slug);
     
     if (!post) {
         return {
