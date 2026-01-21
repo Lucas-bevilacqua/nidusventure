@@ -3,10 +3,17 @@
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { Users, Layout, Zap, ArrowRight } from "lucide-react";
+import { Users, Layout, Zap, ArrowRight, Mic } from "lucide-react";
 import Link from "next/link";
 
 const pipeline = [
+    {
+        name: "KOPILOT",
+        status: "Em Produção / Revenue",
+        desc: "O primeiro CRM de campo voice-first. Seus vendedores falam, a IA transforma em relatórios. 95% de adoção garantida.",
+        icon: Mic,
+        url: "https://usekopilot.com.br",
+    },
     {
         name: "FlowOS",
         status: "Beta / Equity Built",
@@ -38,18 +45,34 @@ export function VentureBuilding() {
                         </div>
 
                         <div className="grid sm:grid-cols-2 gap-4">
-                            {pipeline.map((item, i) => (
-                                <div key={i} className="p-6 md:p-8 border border-border bg-card/10 space-y-4 hover:border-primary/30 transition-colors group overflow-hidden">
-                                    <item.icon className="w-6 h-6 md:w-8 md:h-8 text-primary/40 group-hover:text-primary transition-colors shrink-0" />
-                                    <div className="space-y-1">
-                                        <h3 className="font-black uppercase tracking-widest text-base md:text-lg break-words">{item.name}</h3>
-                                        <span className="text-[10px] text-primary font-bold uppercase tracking-widest">{item.status}</span>
+                            {pipeline.map((item, i) => {
+                                const content = (
+                                    <div className="p-6 md:p-8 border border-border bg-card/10 space-y-4 hover:border-primary/30 transition-colors group overflow-hidden">
+                                        <item.icon className="w-6 h-6 md:w-8 md:h-8 text-primary/40 group-hover:text-primary transition-colors shrink-0" />
+                                        <div className="space-y-1">
+                                            <h3 className="font-black uppercase tracking-widest text-base md:text-lg break-words">{item.name}</h3>
+                                            <span className="text-[10px] text-primary font-bold uppercase tracking-widest">{item.status}</span>
+                                        </div>
+                                        <p className="text-xs md:text-sm text-muted-foreground leading-relaxed break-words">
+                                            {item.desc}
+                                        </p>
+                                        {item.url && (
+                                            <div className="pt-2">
+                                                <a 
+                                                    href={item.url} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="text-[10px] font-black uppercase tracking-[0.2em] text-primary hover:text-primary/80 flex items-center gap-2 transition-colors"
+                                                >
+                                                    Visitar Site <ArrowRight className="w-3 h-3" />
+                                                </a>
+                                            </div>
+                                        )}
                                     </div>
-                                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed break-words">
-                                        {item.desc}
-                                    </p>
-                                </div>
-                            ))}
+                                );
+                                
+                                return <div key={i}>{content}</div>;
+                            })}
                         </div>
                     </div>
 

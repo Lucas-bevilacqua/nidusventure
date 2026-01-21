@@ -2,11 +2,18 @@
 
 import { Navbar } from "@/components/landing/Navbar";
 import { Container } from "@/components/ui/container";
-import { Users, Layout, Zap, ArrowRight, TrendingUp } from "lucide-react";
+import { Users, Layout, Zap, ArrowRight, TrendingUp, Mic } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const pipeline = [
+    {
+        name: "KOPILOT",
+        status: "Em Produção / Revenue",
+        desc: "O primeiro CRM de campo voice-first. Seus vendedores falam, a IA transforma em relatórios estruturados. Zero digitação, 95% de adoção garantida.",
+        icon: Mic,
+        url: "https://usekopilot.com.br",
+    },
     {
         name: "FlowOS",
         status: "Beta / Equity Built",
@@ -89,20 +96,31 @@ export default function VentureBuildingPage() {
                             </div>
                         </div>
 
-                        <div className="grid md:grid-cols-2 gap-0 border-2 border-border bg-background">
+                        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-border bg-background">
                             {pipeline.map((item, i) => (
-                                <div key={i} className="p-12 border-b-2 md:border-b-0 md:border-r-2 last:border-0 border-border space-y-8 group hover:bg-white/[0.02] transition-colors">
-                                    <item.icon className="w-16 h-16 text-primary opacity-20 group-hover:opacity-100 transition-opacity" />
-                                    <div className="space-y-4">
+                                <div key={i} className="p-6 sm:p-8 md:p-12 border-b-2 sm:border-b-2 sm:border-r-2 lg:border-b-0 lg:border-r-2 last:border-0 sm:last:border-r-0 lg:last:border-r-2 border-border space-y-6 md:space-y-8 group hover:bg-white/[0.02] transition-colors overflow-hidden">
+                                    <item.icon className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary opacity-20 group-hover:opacity-100 transition-opacity shrink-0" />
+                                    <div className="space-y-3 md:space-y-4">
                                         <div className="space-y-1">
-                                            <h3 className="text-3xl font-black italic uppercase tracking-tighter text-white">{item.name}</h3>
+                                            <h3 className="text-xl sm:text-2xl md:text-3xl font-black italic uppercase tracking-tighter text-white break-words">{item.name}</h3>
                                             <span className="text-[10px] text-primary font-black uppercase tracking-[0.2em]">{item.status}</span>
                                         </div>
-                                        <p className="text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
+                                        <p className="text-xs sm:text-sm md:text-base text-muted-foreground leading-relaxed font-medium break-words">{item.desc}</p>
                                     </div>
-                                    <Link href={`/blog/${item.name.toLowerCase()}`} className="pt-4 flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-primary transition-colors cursor-pointer">
-                                        Explorar Blueprint <ArrowRight className="w-4 h-4" />
-                                    </Link>
+                                    {item.url ? (
+                                        <a 
+                                            href={item.url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="pt-2 md:pt-4 flex items-center gap-3 md:gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-primary transition-colors cursor-pointer"
+                                        >
+                                            Visitar Site <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+                                        </a>
+                                    ) : (
+                                        <Link href={`/blog/${item.name.toLowerCase()}`} className="pt-2 md:pt-4 flex items-center gap-3 md:gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-primary transition-colors cursor-pointer">
+                                            Explorar Blueprint <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+                                        </Link>
+                                    )}
                                 </div>
                             ))}
                         </div>
