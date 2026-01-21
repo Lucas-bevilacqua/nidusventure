@@ -57,12 +57,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
 
     // Artigos do blog
-    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-        url: `${baseUrl}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-    }));
+    const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => {
+        // Usar publishedDate se disponível (formato ISO), senão usar data atual
+        const lastModified = post.publishedDate 
+            ? new Date(post.publishedDate) 
+            : new Date();
+        
+        // Validar se a data é válida
+        if (isNaN(lastModified.getTime())) {
+            return {
+                url: `${baseUrl}/blog/${post.slug}`,
+                lastModified: new Date(), // Fallback para data atual se inválida
+                changeFrequency: 'monthly' as const,
+                priority: 0.8,
+            };
+        }
+        
+        return {
+            url: `${baseUrl}/blog/${post.slug}`,
+            lastModified,
+            changeFrequency: 'monthly' as const,
+            priority: 0.8,
+        };
+    });
 
     return [...staticPages, ...blogPages];
 }
