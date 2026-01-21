@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Instagram - NIDUS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .post-container {
+            width: 1080px;
+            height: 1080px;
+            background: #0a0a0a;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid #00ff41;
+        }
+        
+        .grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(128,128,128,0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(128,128,128,0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.3;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 80px 60px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: #00ff41;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 32px;
+            color: #0a0a0a;
+            font-style: italic;
+        }
+        
+        .badge {
+            background: rgba(0, 255, 65, 0.1);
+            border: 1px solid #00ff41;
+            padding: 8px 16px;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            color: #00ff41;
+            text-transform: uppercase;
+        }
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .title {
+            font-size: 72px;
+            font-weight: 900;
+            color: #00ff41;
+            text-transform: uppercase;
+            font-style: italic;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+        
+        .subtitle {
+            font-size: 32px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        
+        .text {
+            font-size: 32px;
+            font-size: 36px;
+            color: #ffffff;
+            line-height: 1.6;
+            white-space: pre-line;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            border-top: 2px solid rgba(0, 255, 65, 0.3);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cta {
+            font-size: 18px;
+            color: #00ff41;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        
+        .nidus-brand {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 900;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+        
+        .accent-line {
+            width: 100px;
+            height: 4px;
+            background: #00ff41;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="post-container">
+        <div class="grid-bg"></div>
+        <div class="content">
+            <div class="header">
+                <div class="logo">N</div>
+                <div class="badge">NIDUS VENTURES</div>
+            </div>
+            
+            <div class="main-content">
+                <div class="title" id="title">Escala Real</div>
+                <div class="subtitle" id="subtitle">Sem contratar</div>
+                <div class="accent-line"></div>
+                <div class="text" id="text">Consultoria boutique:
+
+Faturamento: +100%
+Funcionários: +0%
+Margem: +50%
+
+Como?
+
+Eliminando desperdício.
+Otimizando processos.
+
+Escala = eficiência,
+não tamanho.</div>
+            </div>
+            
+            <div class="footer">
+                <div class="cta" id="cta">Link na bio →</div>
+                <div class="nidus-brand">NIDUS</div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Dados do post podem ser passados via URL params
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('title')) {
+            document.getElementById('title').textContent = params.get('title');
+            document.getElementById('subtitle').textContent = params.get('subtitle') || '';
+            document.getElementById('text').textContent = params.get('text') || '';
+            document.getElementById('cta').textContent = params.get('cta') || 'Link na bio →';
+        }
+    </script>
+</body>
+</html>
