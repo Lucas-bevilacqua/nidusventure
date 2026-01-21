@@ -7,6 +7,14 @@ import { useParams, notFound } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { MarkdownContent } from "@/components/blog/MarkdownContent";
+
+// Gerar rotas estáticas para todos os cases no build time
+export async function generateStaticParams() {
+    return cases.map((c) => ({
+        slug: c.slug,
+    }));
+}
 
 export default function CaseDetailPage() {
     const params = useParams();
@@ -45,20 +53,66 @@ export default function CaseDetailPage() {
                 <Container>
                     <div className="grid lg:grid-cols-12 gap-16">
                         <div className="lg:col-span-8 space-y-12">
-                            <div className="space-y-6">
-                                <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">O Desafio</h2>
-                                <p className="text-xl text-muted-foreground leading-relaxed font-medium italic">
-                                    "{caseStudy.shortDesc}"
-                                </p>
-                            </div>
+                            {caseStudy.content ? (
+                                <div className="space-y-12">
+                                    {caseStudy.challenge && (
+                                        <div className="space-y-6">
+                                            <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">O Desafio</h2>
+                                            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                                                <MarkdownContent content={caseStudy.challenge} />
+                                            </div>
+                                        </div>
+                                    )}
 
-                            <div className="space-y-6">
-                                <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">A Solução Nidus</h2>
-                                <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
-                                    <p>{caseStudy.fullDesc}</p>
-                                    <p>Implementamos uma camada de inteligência que não depende de ferramentas complexas, mas sim de um design de fluxo otimizado para o lucro.</p>
+                                    {caseStudy.solution && (
+                                        <div className="space-y-6">
+                                            <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">A Solução Nidus</h2>
+                                            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                                                <MarkdownContent content={caseStudy.solution} />
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {caseStudy.results && (
+                                        <div className="space-y-6">
+                                            <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">Resultados</h2>
+                                            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                                                <MarkdownContent content={caseStudy.results} />
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    {caseStudy.methodology && (
+                                        <div className="space-y-6">
+                                            <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">A Metodologia</h2>
+                                            <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                                                <MarkdownContent content={caseStudy.methodology} />
+                                            </div>
+                                        </div>
+                                    )}
+
+                                    <div className="space-y-6 pt-8 border-t border-border">
+                                        <MarkdownContent content={caseStudy.content} />
+                                    </div>
                                 </div>
-                            </div>
+                            ) : (
+                                <>
+                                    <div className="space-y-6">
+                                        <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">O Desafio</h2>
+                                        <p className="text-xl text-muted-foreground leading-relaxed font-medium italic">
+                                            "{caseStudy.shortDesc}"
+                                        </p>
+                                    </div>
+
+                                    <div className="space-y-6">
+                                        <h2 className="text-3xl font-black italic uppercase tracking-tighter border-l-4 border-primary pl-8">A Solução Nidus</h2>
+                                        <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                                            <p>{caseStudy.fullDesc}</p>
+                                            <p>Implementamos uma camada de inteligência que não depende de ferramentas complexas, mas sim de um design de fluxo otimizado para o lucro.</p>
+                                        </div>
+                                    </div>
+                                </>
+                            )}
                         </div>
 
                         <div className="lg:col-span-4 space-y-8 h-fit sticky top-32">
