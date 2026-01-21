@@ -53,6 +53,7 @@ export const metadata: Metadata = {
 };
 
 import { WhatsAppCTA } from "@/components/landing/WhatsAppCTA";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function RootLayout({
   children,
@@ -66,6 +67,7 @@ export default function RootLayout({
       >
         {children}
         <WhatsAppCTA />
+        <SpeedInsights />
       </body>
     </html>
   );
