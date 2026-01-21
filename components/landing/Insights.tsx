@@ -31,26 +31,26 @@ const posts = [
 
 export function Insights() {
     return (
-        <section className="py-24 md:py-32 bg-background border-t border-border" id="insights">
+        <section className="py-16 sm:py-24 md:py-32 bg-background border-t border-border overflow-x-hidden" id="insights">
             <Container>
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-                    <div className="space-y-4">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-16">
+                    <div className="space-y-3 md:space-y-4">
                         <span className="text-primary text-xs font-black uppercase tracking-[0.4em]">
                             Selected Reads
                         </span>
-                        <h2 className="text-5xl md:text-8xl font-black italic uppercase leading-[1.1] md:leading-[1] tracking-tighter">
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black italic uppercase leading-[1.1] md:leading-[1] tracking-tighter break-words">
                             Pensamento <br />
                             <span className="text-white/20">direto.</span>
                         </h2>
                     </div>
                     <Link href="/blog">
-                        <button className="px-8 py-4 border-2 border-primary text-primary text-[10px] font-black uppercase tracking-widest hover:bg-primary/5 transition-all">
+                        <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary text-[10px] font-black uppercase tracking-widest hover:bg-primary/5 transition-all whitespace-nowrap">
                             Ver Blog Completo
                         </button>
                     </Link>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-0 border-2 border-border">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-border overflow-hidden">
                     {posts.map((post, i) => (
                         <Link key={i} href={`/blog/${post.slug}`} className="group">
                             <motion.div
@@ -58,25 +58,25 @@ export function Insights() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: i * 0.1 }}
                                 viewport={{ once: true }}
-                                className="p-10 border-b-2 md:border-b-0 md:border-r-2 last:border-0 border-border bg-card/10 h-full flex flex-col hover:bg-white/[0.02] transition-colors"
+                                className="p-6 sm:p-8 md:p-10 border-b-2 sm:border-b-2 sm:border-r-2 lg:border-b-0 lg:border-r-2 last:border-0 sm:last:border-r-0 lg:last:border-r-2 border-border bg-card/10 h-full flex flex-col hover:bg-white/[0.02] transition-colors overflow-hidden"
                             >
-                                <div className="mb-8 flex justify-between items-start">
-                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary">
+                                <div className="mb-6 md:mb-8 flex justify-between items-start gap-4">
+                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary shrink-0">
                                         {post.category}
                                     </span>
-                                    <post.icon className="w-5 h-5 text-primary opacity-20 group-hover:opacity-100 transition-opacity" />
+                                    <post.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary opacity-20 group-hover:opacity-100 transition-opacity shrink-0" />
                                 </div>
 
-                                <h3 className="text-2xl font-black italic uppercase tracking-tighter mb-6 group-hover:text-primary transition-colors leading-tight">
+                                <h3 className="text-xl sm:text-2xl font-black italic uppercase tracking-tighter mb-4 md:mb-6 group-hover:text-primary transition-colors leading-tight break-words">
                                     {post.title}
                                 </h3>
 
-                                <p className="text-sm text-muted-foreground leading-relaxed font-medium mb-12 flex-1">
+                                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed font-medium mb-8 md:mb-12 flex-1 break-words">
                                     {post.excerpt}
                                 </p>
 
-                                <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/40 group-hover:text-primary transition-colors">
-                                    Read Article <ArrowRight className="w-4 h-4" />
+                                <div className="flex items-center gap-3 md:gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/40 group-hover:text-primary transition-colors">
+                                    Read Article <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 shrink-0" />
                                 </div>
                             </motion.div>
                         </Link>
