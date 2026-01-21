@@ -116,6 +116,68 @@
             font-weight: 500;
         }
         
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .comparison-side {
+            padding: 30px;
+            border: 2px solid rgba(0, 255, 65, 0.3);
+        }
+        
+        .comparison-side.traditional {
+            border-color: rgba(255, 0, 0, 0.3);
+        }
+        
+        .comparison-side.nidus {
+            border-color: #00ff41;
+        }
+        
+        .comparison-title {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .comparison-title.traditional {
+            color: rgba(255, 0, 0, 0.7);
+        }
+        
+        .comparison-title.nidus {
+            color: #00ff41;
+        }
+        
+        .comparison-list {
+            list-style: none;
+            font-size: 24px;
+            line-height: 1.8;
+        }
+        
+        .comparison-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .comparison-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #00ff41;
+        }
+        
+        .stat-number {
+            font-size: 120px;
+            font-weight: 900;
+            color: #00ff41;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        
         .footer {
             margin-top: 40px;
             border-top: 2px solid rgba(0, 255, 65, 0.3);
