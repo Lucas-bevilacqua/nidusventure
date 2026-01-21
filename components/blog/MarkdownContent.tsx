@@ -4,8 +4,8 @@ import React, { useMemo } from "react";
 import Link from "next/link";
 
 export function MarkdownContent({ content }: { content: string }) {
-    const processText = (text: string): (string | JSX.Element)[] => {
-        const parts: (string | JSX.Element)[] = [];
+    const processText = (text: string): (string | React.ReactElement)[] => {
+        const parts: (string | React.ReactElement)[] = [];
         let lastIndex = 0;
         
         // Processa links [texto](url)
@@ -35,7 +35,7 @@ export function MarkdownContent({ content }: { content: string }) {
         return parts.map((part, i) => {
             if (typeof part === 'string') {
                 const boldRegex = /\*\*([^*]+)\*\*/g;
-                const result: (string | JSX.Element)[] = [];
+                const result: (string | React.ReactElement)[] = [];
                 let textIndex = 0;
                 let boldMatch;
                 let boldKey = 0;
@@ -63,7 +63,7 @@ export function MarkdownContent({ content }: { content: string }) {
     };
 
     const lines = useMemo(() => content.trim().split('\n'), [content]);
-    const elements: JSX.Element[] = [];
+    const elements: React.ReactElement[] = [];
     let currentParagraph: string[] = [];
     let listItems: string[] = [];
     let inList = false;
