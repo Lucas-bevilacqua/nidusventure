@@ -181,6 +181,9 @@ Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas con
         readTime: "12 min",
         metaDescription: "Por que 80% das empresas não veem ROI em projetos de IA? Descubra o erro fatal: automatizar processos que não deveriam existir. Análise real de R$ 50 bilhões gastos em 2024.",
         keywords: ["IA", "inteligencia artificial", "ROI", "automação", "transformação digital", "eficiencia", "processos"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-20",
+        imageUrl: "https://nidusventures.com.br/og-ia-hype.jpg",
         content: `
 # O Hype da IA: Por Que 80% das Empresas Não Veem ROI
 
@@ -346,6 +349,9 @@ Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas con
         readTime: "11 min",
         metaDescription: "Descubra os 3 níveis de automação: tarefas, processos e sistemas. Aprenda por que 90% das empresas ficam presas no nível 1 e como subir para o nível 3.",
         keywords: ["automação", "eficiencia", "processos", "sistemas", "produtividade", "ROI", "otimização"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-15",
+        imageUrl: "https://nidusventures.com.br/og-3-niveis.jpg",
         content: `
 # Os 3 Níveis de Automação: Você Está no Nível 1?
 
@@ -548,6 +554,9 @@ Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas con
         readTime: "14 min",
         metaDescription: "Descubra por que 80% dos projetos de consultoria falham. A diferença entre consultorias tradicionais e pensamento sistêmico real. Casos reais de R$ 2M economizados.",
         keywords: ["consultoria", "eficiencia operacional", "sistemas", "processos", "ROI", "transformação digital"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-22",
+        imageUrl: "https://nidusventures.com.br/og-consultorias.jpg",
         content: `
 # Por Que Consultorias Tradicionais Falham: O Erro de 80% dos Projetos
 
@@ -785,6 +794,9 @@ Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas con
         readTime: "11 min",
         metaDescription: "Aprenda a medir ROI real em automação. Descubra por que 80% das empresas medem errado e como calcular economia real vs atividade. Casos reais de R$ 2M economizados.",
         keywords: ["ROI", "automação", "eficiencia", "métricas", "KPIs", "economia", "processos"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-25",
+        imageUrl: "https://nidusventures.com.br/og-roi.jpg",
         content: `
 # ROI Real em Automação: Como Medir o Que Importa
 
@@ -1030,6 +1042,9 @@ Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas con
         readTime: "13 min",
         metaDescription: "Descubra como empresas B2B escalam sem aumentar custos proporcionalmente. Metodologia de eficiência operacional que gera margem real. Casos reais de escala.",
         keywords: ["eficiencia operacional", "B2B", "escala", "margem", "crescimento", "processos", "sistemas"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-28",
+        imageUrl: "https://nidusventures.com.br/og-eficiencia.jpg",
         content: `
 # Eficiência Operacional B2B: Como Escalar sem Aumentar Custos
 
@@ -1268,6 +1283,9 @@ Hoje, a NIDUS existe para garantir que empresas não automatizem o caos, mas con
         readTime: "11 min",
         metaDescription: "Descubra por que processos vêm antes de ferramentas. A diferença entre resolver problemas de design vs problemas de tecnologia. Casos reais de R$ 2M economizados.",
         keywords: ["processos", "ferramentas", "sistemas", "automação", "eficiencia", "ROI", "metodologia"],
+        author: "Lucas Bevilacqua",
+        publishedDate: "2024-01-30",
+        imageUrl: "https://nidusventures.com.br/og-processos.jpg",
         content: `
 # Processos vs Ferramentas: Por Que 90% Priorizam Errado
 
