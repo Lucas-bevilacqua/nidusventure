@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logo NIDUS - PNG Generator</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            background: #0a0a0a;
+            background: transparent;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,18 +31,48 @@
             width: 800px;
             height: 800px;
         }
+        .instructions {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(10, 10, 10, 0.9);
+            color: #00ff41;
+            padding: 20px;
+            border: 2px solid #00ff41;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+        .instructions h2 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .instructions ul {
+            margin-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
+    <div class="instructions">
+        <h2>📸 Como Gerar Logo PNG</h2>
+        <ul>
+            <li>Use ferramenta de screenshot</li>
+            <li>Capture apenas o logo (quadrado)</li>
+            <li>Salve como PNG</li>
+            <li>Fundo transparente será preservado</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 12px; color: rgba(255,255,255,0.7);">
+            Ou use: htmlcsstoimage.com
+        </p>
+    </div>
     <div class="logo-container">
         <svg class="logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 7 L7 25 M7 7 L20 25 M20 7 L20 25" stroke="#00ff41" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
     </div>
-    <script>
-        // Instruções: Tire screenshot desta página e salve como PNG
-        // Tamanho recomendado: 1024x1024px ou maior
-        // Fundo transparente será preservado se usar ferramenta adequada
-    </script>
 </body>
 </html>
