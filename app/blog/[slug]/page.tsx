@@ -7,6 +7,13 @@ import { blogPosts } from "@/lib/data/blog";
 import { MarkdownContent } from "@/components/blog/MarkdownContent";
 import Script from "next/script";
 
+// Gerar rotas estáticas para todos os artigos no build time
+export async function generateStaticParams() {
+    return blogPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
     const post = blogPosts.find(p => p.slug === params.slug);
 

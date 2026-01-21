@@ -2,6 +2,13 @@ import { Metadata } from 'next';
 import { blogPosts } from '@/lib/data/blog';
 import { notFound } from 'next/navigation';
 
+// Gerar rotas estáticas para todos os artigos no build time
+export async function generateStaticParams() {
+    return blogPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
     const post = blogPosts.find(p => p.slug === params.slug);
     
