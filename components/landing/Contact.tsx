@@ -5,20 +5,34 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Mail, ArrowRight, Calendar } from "lucide-react";
 import React, { useState } from "react";
+import { createLead } from "@/app/actions/leads";
 
 export function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setError(null);
 
-        // Simulação de envio para Vercel/API
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get("name") as string,
+            email: formData.get("email") as string,
+            message: formData.get("message") as string,
+        };
+
+        const result = await createLead(data);
+
+        if (result.success) {
+            setIsSuccess(true);
+        } else {
+            setError(result.error || "Algo deu errado.");
+        }
 
         setIsSubmitting(false);
-        setIsSuccess(true);
     };
 
     return (
@@ -86,20 +100,26 @@ export function Contact() {
                                         Análise Gratuita
                                     </h3>
 
+                                    {error && (
+                                        <div className="p-4 bg-destructive/10 border border-destructive text-destructive text-xs font-bold uppercase tracking-widest">
+                                            {error}
+                                        </div>
+                                    )}
+
                                     <div className="grid md:grid-cols-2 gap-8">
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black uppercase tracking-widest text-primary">Seu Nome</label>
-                                            <input required type="text" className="w-full bg-transparent border-b-2 border-border p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Nome Completo" />
+                                            <input name="name" required type="text" className="w-full bg-transparent border-b-2 border-border p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="Nome Completo" />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black uppercase tracking-widest text-primary">E-mail da Empresa</label>
-                                            <input required type="email" className="w-full bg-transparent border-b-2 border-border p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="voce@empresa.com" />
+                                            <input name="email" required type="email" className="w-full bg-transparent border-b-2 border-border p-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="voce@empresa.com" />
                                         </div>
                                     </div>
 
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-black uppercase tracking-widest text-primary">O que mais te atrapalha hoje?</label>
-                                        <textarea required rows={4} className="w-full bg-transparent border-b-2 border-border p-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Ex: Planilhas lentas, processos confusos..." />
+                                        <textarea name="message" required rows={4} className="w-full bg-transparent border-b-2 border-border p-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="Ex: Planilhas lentas, processos confusos..." />
                                     </div>
 
                                     <Button disabled={isSubmitting} size="lg" className="w-full rounded-none bg-primary text-primary-foreground font-black uppercase tracking-widest py-8 text-sm hover:shadow-[0_10px_30px_rgba(0,255,65,0.3)] transition-all">
