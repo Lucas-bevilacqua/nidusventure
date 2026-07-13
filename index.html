@@ -16,6 +16,25 @@
   #intro .phrase{font:600 clamp(28px,4.5vw,56px)/1.1 var(--font-display);letter-spacing:-0.02em;color:var(--text-on-dark);text-align:center;max-width:22ch;padding:0 24px;opacity:0;transform:translateY(10px);transition:opacity 450ms cubic-bezier(0.22,1,0.36,1),transform 450ms cubic-bezier(0.22,1,0.36,1)}
   #intro .phrase.show{opacity:1;transform:none}
   #intro .phrase em{font-style:normal;color:var(--verde)}
+  /* Responsivo */
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{overflow-x:hidden;max-width:100%}
+  img{max-width:100%}
+  @media (max-width:900px){
+    /* impede que blocos de texto (align-items center/flex-start + maxWidth em ch) estourem a tela */
+    [data-screen-label] *{max-width:100%!important}
+    [data-screen-label] h1,[data-screen-label] h2,[data-screen-label] p,[data-screen-label] span{overflow-wrap:break-word}
+    .ndg-4{grid-template-columns:repeat(2,1fr)!important}
+    .ndg-founder{grid-template-columns:1fr!important;gap:28px!important}
+    .founder-img{height:auto!important;aspect-ratio:1/1;margin-inline:auto}
+  }
+  @media (max-width:680px){
+    .ndg-2{grid-template-columns:1fr!important}
+    .ndg-4{grid-template-columns:1fr!important}
+  }
+  @media (max-width:560px){
+    :root{--space-9:60px;--space-10:76px}
+  }
 </style>
 </head><body>
 <div id="intro"><div class="phrase" id="introPhrase"></div></div>
@@ -127,7 +146,7 @@ function Comparison() {
           <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: "16px 0 0", color: "var(--text-on-light)" }}>“Mas eu já uso o ChatGPT.”</h2>
           <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-light-muted)", margin: 0, maxWidth: "60ch" }}>Ótimo — então você já viu o potencial. A diferença entre os 96% e os 22% é o que eu deixo instalado. Chat responde. O que eu instalo, trabalha.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+        <div className="ndg-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
           <Card variant="light">
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <span style={{ font: "var(--type-heading)", letterSpacing: "var(--tracking-display)", color: "var(--text-on-light)" }}>ChatGPT no navegador</span>
@@ -161,7 +180,7 @@ function Timeline() {
           <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0 }}>Duas horas. Quatro entregas.</h2>
           <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0 }}>Nada de aula. A call é trabalho acontecendo na sua tela, comigo conduzindo.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div className="ndg-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
           {steps.map((s) => (
             <Card key={s.t} interactive>
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -182,7 +201,7 @@ function Fluxos() {
     { title: "Resposta a cliente", desc: "triagem e primeira resposta no seu tom, no WhatsApp ou e-mail", m: "4h de fila → 2 min" },
     { title: "Rotina administrativa", desc: "cobranças, follow-ups e despesas organizados sem você", m: "2 dias/semana → 2h" },
     { title: "Proposta comercial", desc: "o lead chega, a proposta sai no mesmo dia, no seu padrão", m: "responda antes do concorrente" },
-    { title: "Conteúdo e relatórios", desc: "posts no padrão da marca, números virando resumo executivo", m: "1 tarde → sozinho" },
+    { title: "Conteúdo e relatórios", desc: "posts no padrão da marca, números virando resumo executivo", m: "1 tarde → minutos" },
   ];
   return (
     <section data-screen-label="Fluxos" style={{ padding: "0 0 var(--space-9)" }}>
@@ -192,7 +211,7 @@ function Fluxos() {
           <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0 }}>O trabalho de mais um funcionário. Sem contratar.</h2>
           <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "60ch" }}>Na call escolhemos um. Os outros você monta com o suporte — ou com o time inteiro, no programa.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div className="ndg-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
           {items.map((it, i) => (
             <Card key={it.title} interactive>
               <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
@@ -220,7 +239,7 @@ function Pricing() {
           <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0, color: "var(--text-on-light)" }}>Escolha por onde começar.</h2>
           <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-light-muted)", margin: 0 }}>Preço fechado, escopo fechado. Os dois caminhos terminam com a sua operação rodando.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+        <div className="ndg-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
           <div style={{ background: "var(--ink-1)", borderRadius: "var(--radius-xl)", padding: "var(--space-6)", color: "var(--text-on-dark)", boxShadow: "var(--shadow-lg)", display: "flex", flexDirection: "column", gap: 20 }}>
             <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start" }}>
               <Badge tone="solid">Comece aqui</Badge>
@@ -271,8 +290,8 @@ function Pricing() {
 function Founder() {
   return (
     <section data-screen-label="Fundador" style={{ padding: "var(--space-9) 0" }}>
-      <div style={{ ...wrap, display: "grid", gridTemplateColumns: "280px 1fr", gap: 56, alignItems: "center" }}>
-        <img src="assets/lucas.png" alt="Lucas Bevilacqua" style={{ width: 280, height: 280, objectFit: "cover", borderRadius: "var(--radius-xl)", border: "1px solid var(--ink-border)", display: "block" }} />
+      <div className="ndg-founder" style={{ ...wrap, display: "grid", gridTemplateColumns: "280px 1fr", gap: 56, alignItems: "center" }}>
+        <img className="founder-img" src="assets/lucas.png" alt="Lucas Bevilacqua" style={{ width: 280, height: 280, objectFit: "cover", borderRadius: "var(--radius-xl)", border: "1px solid var(--ink-border)", display: "block" }} />
         <div style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "flex-start" }}>
           <Badge tone="neutral">Lucas Bevilacqua · fundador da Nidus</Badge>
           <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0, maxWidth: "26ch" }}>Quem conduz faz isso todo dia. Não só ensina.</h2>
