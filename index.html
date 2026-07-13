@@ -81,6 +81,15 @@ const wrap = { maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 3
 const overline = { font: "var(--type-overline)", letterSpacing: "var(--tracking-wide)", textTransform: "uppercase", color: "var(--verde)" };
 const stripes = "repeating-linear-gradient(45deg, var(--ink-2), var(--ink-2) 10px, var(--ink-1) 10px, var(--ink-1) 20px)";
 
+const FONE = "5554996758327";
+const zap = "https://wa.me/" + FONE + "?text=" + encodeURIComponent("Oi Lucas! Vim pelo site da Nidus e quero o diagnóstico gratuito de 30 min.");
+const zapPrograma = "https://wa.me/" + FONE + "?text=" + encodeURIComponent("Oi Lucas! Vim pelo site e quero saber sobre o Programa de equipe.");
+const EMAIL = "mailto:contato@nidusventures.com.br";
+const abrirZap = () => window.open(zap, "_blank");
+const abrirZapPrograma = () => window.open(zapPrograma, "_blank");
+const abrirEmail = () => { window.location.href = EMAIL; };
+const irComoFunciona = () => { const e = document.getElementById("como-funciona"); if (e) e.scrollIntoView({ behavior: "smooth" }); };
+
 function Placeholder({ label, height, radius }) {
   return (
     <div style={{ height: height || "100%", minHeight: 120, borderRadius: radius || "var(--radius-lg)", border: "1px solid var(--ink-border)", background: stripes, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -114,7 +123,7 @@ function Nav() {
       <div style={{ ...wrap, display: "flex", alignItems: "center", gap: 32, height: 72 }}>
         <Wordmark />
         <div style={{ marginLeft: "auto", display: "flex", gap: 10, alignItems: "center" }}>
-          <Button variant="primary" size="sm">Agendar</Button>
+          <Button variant="primary" size="sm" onClick={abrirZap}>Agendar</Button>
         </div>
       </div>
     </header>
@@ -130,8 +139,8 @@ function Hero() {
           <h1 style={{ font: "var(--type-display-xl)", letterSpacing: "var(--tracking-display)", margin: 0, textWrap: "balance" }}>IA de verdade na sua empresa. Em uma tarde.</h1>
           <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "52ch" }}>Uma call de 2 horas. Eu instalo, monto a memória da sua empresa — o Ninho — e o primeiro fluxo do seu dia sai funcionando na sua tela. É o funcionário que você não precisa contratar.</p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 8 }}>
-            <Button variant="primary" size="lg">Fazer o diagnóstico gratuito</Button>
-            <Button variant="secondary" size="lg">Como funciona</Button>
+            <Button variant="primary" size="lg" onClick={abrirZap}>Fazer o diagnóstico gratuito</Button>
+            <Button variant="secondary" size="lg" onClick={irComoFunciona}>Como funciona</Button>
           </div>
           <p style={{ font: "var(--type-small)", color: "var(--text-on-dark-muted)", margin: 0 }}>30 minutos no WhatsApp. Você sai com o mapa do seu primeiro fluxo — feche ou não feche.</p>
         </div>
@@ -177,7 +186,7 @@ function Timeline() {
     { t: "01:45", title: "Entrega e caminho", desc: "Gravação da call, playbook do que foi montado, 30 dias de suporte no WhatsApp e atualizações do Ninho por 12 meses: skill nova que eu criar, você recebe." },
   ];
   return (
-    <section data-screen-label="Timeline" style={{ padding: "var(--space-9) 0" }}>
+    <section id="como-funciona" data-screen-label="Timeline" style={{ padding: "var(--space-9) 0" }}>
       <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 40 }}>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
           <span style={overline}>A call</span>
@@ -263,7 +272,7 @@ function Pricing() {
               {li("30 dias de suporte no WhatsApp + checkpoint de 30 min")}
               {li("Atualizações do Ninho por 12 meses")}
             </div>
-            <Button variant="primary" size="lg">Agendar implantação</Button>
+            <Button variant="primary" size="lg" onClick={abrirZap}>Agendar implantação</Button>
             <p style={{ font: "var(--type-caption)", color: "var(--text-on-dark-muted)", margin: 0 }}>Garantia: se nos primeiros 30 minutos eu não encontrar caso de uso real na sua operação, encerro a call e devolvo 100%.</p>
           </div>
           <div className="price-card" style={{ background: "#fff", border: "1px solid var(--paper-border)", borderRadius: "var(--radius-xl)", padding: "var(--space-6)", color: "var(--text-on-light)", display: "flex", flexDirection: "column", gap: 20 }}>
@@ -283,7 +292,7 @@ function Pricing() {
               {li("Ninho multiusuário pra equipe")}
               {li("60 dias de suporte")}
             </div>
-            <Button variant="light" size="lg" style={{ border: "1px solid var(--text-on-light)" }}>Falar sobre o programa</Button>
+            <Button variant="light" size="lg" style={{ border: "1px solid var(--text-on-light)" }} onClick={abrirZapPrograma}>Falar sobre o programa</Button>
           </div>
         </div>
       </div>
@@ -347,7 +356,7 @@ function CTA() {
         <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "56ch" }}>Me chama no WhatsApp e me diz o que mais come o seu dia. Eu te digo na hora se dá pra resolver — e qual seria o primeiro fluxo.</p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
           <Button variant="primary" size="lg">Fazer o diagnóstico gratuito</Button>
-          <Button variant="secondary" size="lg">Falar por e-mail</Button>
+          <Button variant="secondary" size="lg" onClick={abrirEmail}>Falar por e-mail</Button>
         </div>
       </div>
     </section>
@@ -359,9 +368,9 @@ function Footer() {
     <footer data-screen-label="Footer" style={{ borderTop: "1px solid var(--ink-border)", padding: "var(--space-6) 0" }}>
       <div style={{ ...wrap, display: "flex", gap: 32, alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" }}>
         <Wordmark />
-        <span style={{ font: "var(--type-caption)", color: "var(--text-on-dark-muted)" }}>© 2026 Nidus · contato@nidusventures.com.br</span>
+        <span style={{ font: "var(--type-caption)", color: "var(--text-on-dark-muted)" }}>© 2026 Nidus · contato@nidusventures.com.br · WhatsApp (54) 99675-8327</span>
         <nav style={{ display: "flex", gap: 24, font: "var(--type-small)", color: "var(--text-on-dark-muted)" }}>
-          <a href="#" style={{ color: "inherit" }}>WhatsApp</a>
+          <a href={zap} target="_blank" style={{ color: "inherit" }}>WhatsApp</a>
           <a href="#" style={{ color: "inherit" }}>LinkedIn</a>
           <a href="#" style={{ color: "inherit" }}>Instagram</a>
         </nav>
