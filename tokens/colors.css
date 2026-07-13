@@ -1,0 +1,45 @@
+/* nIUD — sistema de cores. Dark-first com seções claras. */
+:root {
+  /* Neutros escuros (ink) */
+  --ink-1: oklch(0.16 0.008 170);   /* fundo base */
+  --ink-2: oklch(0.20 0.010 170);   /* superfície elevada */
+  --ink-3: oklch(0.25 0.012 170);   /* hover / borda forte */
+  --ink-border: oklch(0.32 0.012 170 / 0.55);
+
+  /* Neutros claros (paper) */
+  --paper-1: oklch(0.975 0.004 170); /* fundo claro */
+  --paper-2: oklch(0.945 0.006 170); /* superfície claro */
+  --paper-border: oklch(0.86 0.008 170);
+
+  /* Texto */
+  --text-on-dark: oklch(0.97 0.004 170);
+  --text-on-dark-muted: oklch(0.74 0.010 170);
+  --text-on-light: oklch(0.22 0.010 170);
+  --text-on-light-muted: oklch(0.48 0.010 170);
+
+  /* Acentos — mesma luminosidade/croma, matizes diferentes */
+  --verde: oklch(0.80 0.14 165);        /* acento primário */
+  --verde-strong: oklch(0.70 0.14 165); /* hover / uso em fundo claro */
+  --verde-dim: oklch(0.80 0.14 165 / 0.14);
+  --lilas: oklch(0.80 0.14 300);        /* acento secundário */
+  --lilas-dim: oklch(0.80 0.14 300 / 0.14);
+  --ink-on-accent: oklch(0.18 0.02 170);
+
+  /* Semânticas */
+  --success: oklch(0.70 0.14 155);
+  --warning: oklch(0.78 0.14 85);
+  --danger: oklch(0.62 0.19 25);
+  --info: oklch(0.70 0.12 230);
+
+  /* Aliases semânticos */
+  --surface-page: var(--ink-1);
+  --surface-card: var(--ink-2);
+  --surface-card-light: var(--paper-2);
+  --text-body: var(--text-on-dark);
+  --text-muted: var(--text-on-dark-muted);
+  --border-default: var(--ink-border);
+  --accent: var(--verde);
+  --accent-2: var(--lilas);
+  --link: var(--verde);
+  --link-hover: var(--verde-strong);
+}

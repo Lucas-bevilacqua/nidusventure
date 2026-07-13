@@ -1,0 +1,15 @@
+/* nIUD — sombras, brilhos, transições */
+:root {
+  /* Em fundo escuro: bordas + glow, nunca sombra pesada */
+  --glow-verde: 0 0 0 1px oklch(0.80 0.14 165 / 0.35), 0 8px 40px oklch(0.80 0.14 165 / 0.18);
+  --glow-lilas: 0 0 0 1px oklch(0.80 0.14 300 / 0.35), 0 8px 40px oklch(0.80 0.14 300 / 0.18);
+
+  /* Em fundo claro: sombras suaves */
+  --shadow-sm: 0 1px 2px oklch(0.2 0.01 170 / 0.08);
+  --shadow-md: 0 4px 16px oklch(0.2 0.01 170 / 0.10);
+  --shadow-lg: 0 12px 40px oklch(0.2 0.01 170 / 0.14);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 150ms var(--ease-out);
+  --transition-base: 250ms var(--ease-out);
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nidus — Implantação de IA</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="ds-loader.js"></script>
+<style>
+  body{margin:0;background:var(--ink-1);color:var(--text-on-dark);font:var(--type-body)}
+  a{color:var(--link);text-decoration:none}
+  a:hover{color:var(--link-hover)}
+  #intro{position:fixed;inset:0;z-index:9999;background:var(--ink-1);display:flex;align-items:center;justify-content:center;transition:opacity 600ms cubic-bezier(0.22,1,0.36,1)}
+  #intro.done{opacity:0;pointer-events:none}
+  #intro .phrase{font:600 clamp(28px,4.5vw,56px)/1.1 var(--font-display);letter-spacing:-0.02em;color:var(--text-on-dark);text-align:center;max-width:22ch;padding:0 24px;opacity:0;transform:translateY(10px);transition:opacity 450ms cubic-bezier(0.22,1,0.36,1),transform 450ms cubic-bezier(0.22,1,0.36,1)}
+  #intro .phrase.show{opacity:1;transform:none}
+  #intro .phrase em{font-style:normal;color:var(--verde)}
+</style>
+</head><body>
+<div id="intro"><div class="phrase" id="introPhrase"></div></div>
+<div id="root"></div>
+<script>
+(function () {
+  var phrases = [
+    "<em>96%</em> dos donos de PME conhecem o ChatGPT.",
+    "Só <em>22%</em> têm IA trabalhando de verdade.",
+    "O funcionário que você <em>não precisa contratar</em>."
+  ];
+  var el = document.getElementById("introPhrase");
+  var intro = document.getElementById("intro");
+  var i = 0;
+  function next() {
+    if (i >= phrases.length) {
+      var finish = function () {
+        intro.classList.add("done");
+        setTimeout(function () { intro.remove(); }, 700);
+      };
+      if (window.__siteReady) finish();
+      else { window.__onSiteReady = finish; setTimeout(finish, 4000); }
+      return;
+    }
+    el.innerHTML = phrases[i];
+    el.classList.add("show");
+    setTimeout(function () {
+      el.classList.remove("show");
+      setTimeout(function () { i++; next(); }, 450);
+    }, 1900);
+  }
+  next();
+})();
+</script>
+<script type="text/plain" data-app>
+__getNIUD("").then((NS) => {
+const { Button, Card, Badge, Tag, Metric, Tabs, Input } = NS;
+
+const wrap = { maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 32px" };
+const overline = { font: "var(--type-overline)", letterSpacing: "var(--tracking-wide)", textTransform: "uppercase", color: "var(--verde)" };
+const stripes = "repeating-linear-gradient(45deg, var(--ink-2), var(--ink-2) 10px, var(--ink-1) 10px, var(--ink-1) 20px)";
+
+function Placeholder({ label, height, radius }) {
+  return (
+    <div style={{ height: height || "100%", minHeight: 120, borderRadius: radius || "var(--radius-lg)", border: "1px solid var(--ink-border)", background: stripes, display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <span style={{ font: "var(--type-caption)", fontFamily: "var(--font-mono)", color: "var(--text-on-dark-muted)", background: "var(--ink-1)", padding: "4px 10px", borderRadius: 6 }}>{label}</span>
+    </div>
+  );
+}
+
+function Logo({ size = 28 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <circle cx="16" cy="11" r="4.5" fill="var(--verde)" />
+      <path d="M4 15 C4 21.5 9.2 26 16 26 C22.8 26 28 21.5 28 15" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+      <path d="M9 17.5 C9.5 21 12.4 23 16 23 C19.6 23 22.5 21 23 17.5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" opacity="0.45" />
+    </svg>
+  );
+}
+
+function Wordmark() {
+  return (
+    <span style={{ display: "inline-flex", alignItems: "center", gap: 9, color: "var(--text-on-dark)" }}>
+      <Logo />
+      <span style={{ font: "600 24px/1 var(--font-display)", letterSpacing: "var(--tracking-display)" }}>nidus</span>
+    </span>
+  );
+}
+
+function Nav() {
+  return (
+    <header data-screen-label="Navbar" style={{ borderBottom: "1px solid var(--ink-border)", position: "sticky", top: 0, background: "oklch(0.16 0.008 170 / 0.85)", backdropFilter: "blur(12px)", zIndex: 100 }}>
+      <div style={{ ...wrap, display: "flex", alignItems: "center", gap: 32, height: 72 }}>
+        <Wordmark />
+        <div style={{ marginLeft: "auto", display: "flex", gap: 10, alignItems: "center" }}>
+          <Button variant="primary" size="sm">Agendar</Button>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+function Hero() {
+  return (
+    <section data-screen-label="Hero" style={{ padding: "var(--space-10) 0 var(--space-9)" }}>
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 24, alignItems: "center", textAlign: "center" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 24, alignItems: "center", maxWidth: 820 }}>
+          <Badge>Implantação Nidus</Badge>
+          <h1 style={{ font: "var(--type-display-xl)", letterSpacing: "var(--tracking-display)", margin: 0, textWrap: "balance" }}>IA de verdade na sua empresa. Em uma tarde.</h1>
+          <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "52ch" }}>Uma call de 2 horas. Eu instalo, monto o Ninho da sua empresa e o primeiro fluxo sai funcionando na sua tela. É o funcionário que você não precisa contratar.</p>
+          <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center", marginTop: 8 }}>
+            <Button variant="primary" size="lg">Fazer o diagnóstico gratuito</Button>
+            <Button variant="secondary" size="lg">Como funciona</Button>
+          </div>
+          <p style={{ font: "var(--type-small)", color: "var(--text-on-dark-muted)", margin: 0 }}>30 minutos no WhatsApp. Você sai com o mapa do seu primeiro fluxo — feche ou não feche.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Comparison() {
+  return (
+    <section data-screen-label="Comparação" style={{ background: "var(--paper-1)", padding: "var(--space-9) 0" }}>
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 40 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <span style={{ ...overline, color: "var(--verde-strong)" }}>A diferença</span>
+          <p style={{ font: "var(--type-title)", fontFamily: "var(--font-display)", letterSpacing: "var(--tracking-display)", margin: 0, color: "var(--text-on-light)", maxWidth: "44ch" }}><span style={{ color: "var(--verde-strong)" }}>96%</span> dos donos de PME já conhecem o ChatGPT. Só <span style={{ color: "var(--verde-strong)" }}>22%</span> usam IA de forma estruturada.</p>
+          <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: "16px 0 0", color: "var(--text-on-light)" }}>“Mas eu já uso o ChatGPT.”</h2>
+          <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-light-muted)", margin: 0, maxWidth: "60ch" }}>Ótimo — então você já viu o potencial. A diferença entre os 96% e os 22% é o que eu deixo instalado. Chat responde. O que eu instalo, trabalha.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24 }}>
+          <Card variant="light">
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{ font: "var(--type-heading)", letterSpacing: "var(--tracking-display)", color: "var(--text-on-light)" }}>ChatGPT no navegador</span>
+              <p style={{ font: "var(--type-body)", color: "var(--text-on-light-muted)", margin: 0 }}>Não conhece sua empresa: você explica tudo, toda vez. Esquece a conversa de ontem. Devolve texto genérico que você copia, cola e reformata. Cada pessoa do time usa de um jeito, com um resultado.</p>
+            </div>
+          </Card>
+          <Card variant="light" style={{ border: "1px solid var(--verde-strong)", boxShadow: "var(--shadow-md)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <span style={{ font: "var(--type-heading)", letterSpacing: "var(--tracking-display)", color: "var(--text-on-light)" }}>O que eu deixo instalado</span>
+              <p style={{ font: "var(--type-body)", color: "var(--text-on-light-muted)", margin: 0 }}>Conhece sua empresa de cor: oferta, preços, clientes, tom. Trabalha direto nos seus arquivos e entrega o documento final, no seu modelo. E o fluxo é padronizado: sai igual, certo, toda vez — não importa quem pediu.</p>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Timeline() {
+  const steps = [
+    { t: "00:00", title: "Instalação", desc: "Claude Code instalado e configurado no seu computador, do zero. Você não precisa saber nada de tecnologia — se usa WhatsApp, consegue usar isso." },
+    { t: "00:30", title: "O Ninho", desc: "Te entrevisto sobre o negócio e transformo as respostas na memória da empresa: quem você é, o que vende, como fala. É o que faz a IA responder como sua empresa." },
+    { t: "01:15", title: "Primeiro fluxo, ao vivo", desc: "Escolhemos a tarefa que mais come o seu dia e eu monto o fluxo na sua frente. A primeira resposta, cobrança ou proposta sai pronta antes da call acabar." },
+    { t: "01:45", title: "Entrega e caminho", desc: "Gravação da call, playbook do que foi montado, 30 dias de suporte no WhatsApp e atualizações do Ninho por 12 meses: skill nova que eu criar, você recebe." },
+  ];
+  return (
+    <section data-screen-label="Timeline" style={{ padding: "var(--space-9) 0" }}>
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 40 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
+          <span style={overline}>A call</span>
+          <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0 }}>Duas horas. Quatro entregas.</h2>
+          <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0 }}>Nada de aula. A call é trabalho acontecendo na sua tela, comigo conduzindo.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          {steps.map((s) => (
+            <Card key={s.t} interactive>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <span style={{ font: "var(--type-overline)", letterSpacing: "var(--tracking-wide)", color: "var(--verde)" }}>{s.t}</span>
+                <span style={{ font: "var(--type-heading)", letterSpacing: "var(--tracking-display)" }}>{s.title}</span>
+                <p style={{ font: "var(--type-small)", color: "var(--text-on-dark-muted)", margin: 0 }}>{s.desc}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Fluxos() {
+  const items = [
+    { title: "Resposta a cliente", desc: "triagem e primeira resposta no seu tom, no WhatsApp ou e-mail", m: "4h de fila → 2 min" },
+    { title: "Rotina administrativa", desc: "cobranças, follow-ups e despesas organizados sem você", m: "2 dias/semana → 2h" },
+    { title: "Proposta comercial", desc: "o lead chega, a proposta sai no mesmo dia, no seu padrão", m: "responda antes do concorrente" },
+    { title: "Conteúdo e relatórios", desc: "posts no padrão da marca, números virando resumo executivo", m: "1 tarde → sozinho" },
+  ];
+  return (
+    <section data-screen-label="Fluxos" style={{ padding: "0 0 var(--space-9)" }}>
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 32 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "flex-start" }}>
+          <span style={overline}>Fluxos</span>
+          <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0 }}>O trabalho de mais um funcionário. Sem contratar.</h2>
+          <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "60ch" }}>Na call escolhemos um. Os outros você monta com o suporte — ou com o time inteiro, no programa.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+          {items.map((it, i) => (
+            <Card key={it.title} interactive>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                <span style={{ font: "var(--type-overline)", letterSpacing: "var(--tracking-wide)", color: "var(--text-on-dark-muted)" }}>{String(i + 1).padStart(2, "0")}</span>
+                <span style={{ font: "var(--type-heading)", letterSpacing: "var(--tracking-display)" }}>{it.title}</span>
+                <p style={{ font: "var(--type-small)", color: "var(--text-on-dark-muted)", margin: 0 }}>{it.desc}</p>
+                <span style={{ font: "600 22px/1.2 var(--font-display)", letterSpacing: "var(--tracking-display)", color: "var(--verde)", marginTop: 6 }}>{it.m}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  const check = <span style={{ color: "var(--verde)", fontWeight: 700, flexShrink: 0 }}>✓</span>;
+  const li = (t) => <div style={{ display: "flex", gap: 10, alignItems: "baseline", font: "var(--type-small)" }}>{check}<span>{t}</span></div>;
+  return (
+    <section data-screen-label="Preços" style={{ background: "var(--paper-1)", padding: "var(--space-9) 0" }}>
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 40 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <span style={{ ...overline, color: "var(--verde-strong)" }}>Investimento</span>
+          <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0, color: "var(--text-on-light)" }}>Escolha por onde começar.</h2>
+          <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-light-muted)", margin: 0 }}>Preço fechado, escopo fechado. Os dois caminhos terminam com a sua operação rodando.</p>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+          <div style={{ background: "var(--ink-1)", borderRadius: "var(--radius-xl)", padding: "var(--space-6)", color: "var(--text-on-dark)", boxShadow: "var(--shadow-lg)", display: "flex", flexDirection: "column", gap: 20 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start" }}>
+              <Badge tone="solid">Comece aqui</Badge>
+              <span style={{ font: "var(--type-title)", letterSpacing: "var(--tracking-display)" }}>Implantação 1:1</span>
+              <span style={{ font: "var(--type-small)", color: "var(--text-on-dark-muted)" }}>Pra você, dono, sair operando hoje.</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+              <span style={{ font: "600 48px/1 var(--font-display)", letterSpacing: "var(--tracking-display)" }}>R$ 1.997</span>
+              <span style={{ font: "var(--type-caption)", fontFamily: "var(--font-mono)", color: "var(--text-on-dark-muted)" }}>pagamento único</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {li("Call ao vivo de 2h, na sua tela")}
+              {li("Claude Code instalado e configurado")}
+              {li("Ninho montado com 8 skills prontas, personalizadas pro seu negócio")}
+              {li("1 fluxo funcionando antes da call acabar")}
+              {li("Gravação + playbook escrito")}
+              {li("30 dias de suporte no WhatsApp + checkpoint de 30 min")}
+              {li("Atualizações do Ninho por 12 meses")}
+            </div>
+            <Button variant="primary" size="lg">Agendar implantação</Button>
+            <p style={{ font: "var(--type-caption)", color: "var(--text-on-dark-muted)", margin: 0 }}>Garantia: se nos primeiros 30 minutos eu não encontrar caso de uso real na sua operação, encerro a call e devolvo 100%.</p>
+          </div>
+          <div style={{ background: "#fff", border: "1px solid var(--paper-border)", borderRadius: "var(--radius-xl)", padding: "var(--space-6)", color: "var(--text-on-light)", display: "flex", flexDirection: "column", gap: 20 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              <span style={{ font: "var(--type-title)", letterSpacing: "var(--tracking-display)" }}>Programa de equipe</span>
+              <span style={{ font: "var(--type-small)", color: "var(--text-on-light-muted)" }}>Pra empresas de 3 a 50 pessoas, em 4 semanas.</span>
+            </div>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
+              <span style={{ font: "600 48px/1 var(--font-display)", letterSpacing: "var(--tracking-display)" }}>R$ 6.500</span>
+              <span style={{ font: "var(--type-caption)", fontFamily: "var(--font-mono)", color: "var(--text-on-light-muted)" }}>pagamento único</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {li("Tudo da Implantação 1:1, incluso")}
+              {li("Diagnóstico completo da operação")}
+              {li("4 encontros ao vivo com o time")}
+              {li("2 a 3 fluxos implantados e medidos")}
+              {li("Ninho multiusuário pra equipe")}
+              {li("60 dias de suporte")}
+            </div>
+            <Button variant="light" size="lg" style={{ border: "1px solid var(--text-on-light)" }}>Falar sobre o programa</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Founder() {
+  return (
+    <section data-screen-label="Fundador" style={{ padding: "var(--space-9) 0" }}>
+      <div style={{ ...wrap, display: "grid", gridTemplateColumns: "280px 1fr", gap: 56, alignItems: "center" }}>
+        <img src="assets/lucas.png" alt="Lucas Bevilacqua" style={{ width: 280, height: 280, objectFit: "cover", borderRadius: "var(--radius-xl)", border: "1px solid var(--ink-border)", display: "block" }} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, alignItems: "flex-start" }}>
+          <Badge tone="neutral">Lucas Bevilacqua · fundador da Nidus</Badge>
+          <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0, maxWidth: "26ch" }}>Quem conduz faz isso todo dia. Não só ensina.</h2>
+          <p style={{ font: "var(--type-body)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "68ch" }}>Lucas Bevilacqua lidera produtos de software com IA em produção: sistemas de agentes autônomos, automação de operações e fluxos que equipes reais usam todos os dias. Claude Code é a ferramenta de trabalho dele — não o assunto do curso dele.</p>
+          <p style={{ font: "var(--type-body)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "68ch" }}>A Nidus é o jeito de levar isso pra dentro de empresas menores: implantação direta, sem hype, com resultado que aparece na primeira call.</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  const qs = [
+    { q: "Preciso pagar alguma ferramenta além da call?", a: "Sim, uma: a assinatura do Claude, a IA que roda por trás de tudo. É o único custo recorrente e fica numa conta no seu nome, paga direto à Anthropic — assim o controle é seu. A call é pagamento único; a assinatura é o “salário” desse funcionário digital. Na call eu ajudo você a escolher o plano certo pro seu volume e deixo tudo configurado — pra maioria, o plano inicial já resolve." },
+    { q: "Não entendo de tecnologia. Funciona pra mim?", a: "Se você usa WhatsApp, você usa isso. Você conversa em português, como pediria a um funcionário — não tem código, não tem menu escondido. Na call eu deixo tudo instalado e configurado; depois você só abre e pede." },
+    { q: "E se não funcionar pro meu tipo de negócio?", a: "Por isso o diagnóstico é gratuito: nos primeiros 30 minutos eu procuro um caso de uso real na sua operação. Se não achar, encerro e não cobro. E na implantação vale a garantia — se nos primeiros 30 minutos da call eu não encontrar um caso real, devolvo 100%. O risco é meu." },
+    { q: "Qual a diferença pros cursos de IA por aí?", a: "Curso te ensina a usar uma ferramenta e vai embora. Eu não ensino — eu instalo. Você sai da call com o sistema montado, com a memória da sua empresa dentro dele e um fluxo já funcionando. Não é aula, é implantação." },
+    { q: "Minha equipe precisa participar?", a: "Na Implantação 1:1, não — é pra você, dono, sair operando. Se você tem um time de 3 a 50 pessoas e quer todo mundo usando de forma padronizada, aí é o Programa de equipe, com encontros ao vivo com o time." },
+  ];
+  const [open, setOpen] = React.useState(null);
+  return (
+    <section data-screen-label="FAQ" style={{ padding: "0 0 var(--space-9)" }}>
+      <div style={{ ...wrap, display: "flex", flexDirection: "column", gap: 32 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <span style={overline}>Dúvidas</span>
+          <h2 style={{ font: "var(--type-display-md)", letterSpacing: "var(--tracking-display)", margin: 0 }}>Perguntas frequentes.</h2>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10, maxWidth: 800 }}>
+          {qs.map((item, i) => (
+            <div key={item.q} onClick={() => setOpen(open === i ? null : i)} style={{ background: "var(--ink-2)", border: "1px solid var(--ink-border)", borderRadius: "var(--radius-md)", padding: "16px 20px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", gap: 16, alignItems: "center" }}>
+                <span style={{ font: "var(--type-body)", fontWeight: 500 }}>{item.q}</span>
+                <span style={{ color: "var(--verde)", fontFamily: "var(--font-mono)" }}>{open === i ? "−" : "+"}</span>
+              </div>
+              {open === i && <p style={{ font: "var(--type-small)", color: "var(--text-on-dark-muted)", margin: 0 }}>{item.a}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTA() {
+  return (
+    <section data-screen-label="CTA" style={{ borderTop: "1px solid var(--ink-border)", padding: "var(--space-9) 0" }}>
+      <div style={{ ...wrap, textAlign: "center", display: "flex", flexDirection: "column", gap: 24, alignItems: "center" }}>
+        <h2 style={{ font: "var(--type-display-lg)", letterSpacing: "var(--tracking-display)", margin: 0, textWrap: "balance" }}>Comece pelos 30 minutos gratuitos.</h2>
+        <p style={{ font: "var(--type-body-lg)", color: "var(--text-on-dark-muted)", margin: 0, maxWidth: "56ch" }}>Me chama no WhatsApp e me diz o que mais come o seu dia. Eu te digo na hora se dá pra resolver — e qual seria o primeiro fluxo.</p>
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
+          <Button variant="primary" size="lg">Fazer o diagnóstico gratuito</Button>
+          <Button variant="secondary" size="lg">Falar por e-mail</Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer data-screen-label="Footer" style={{ borderTop: "1px solid var(--ink-border)", padding: "var(--space-6) 0" }}>
+      <div style={{ ...wrap, display: "flex", gap: 32, alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" }}>
+        <Wordmark />
+        <span style={{ font: "var(--type-caption)", color: "var(--text-on-dark-muted)" }}>© 2026 Nidus · contato@nidusventures.com.br</span>
+        <nav style={{ display: "flex", gap: 24, font: "var(--type-small)", color: "var(--text-on-dark-muted)" }}>
+          <a href="#" style={{ color: "inherit" }}>WhatsApp</a>
+          <a href="#" style={{ color: "inherit" }}>LinkedIn</a>
+          <a href="#" style={{ color: "inherit" }}>Instagram</a>
+        </nav>
+      </div>
+    </footer>
+  );
+}
+
+function Page() {
+  return (
+    <div>
+      <Nav />
+      <Hero />
+      <Comparison />
+      <Timeline />
+      <Fluxos />
+      <Pricing />
+      <Founder />
+      <FAQ />
+      <CTA />
+      <Footer />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Page />);
+window.__siteReady = true;
+if (window.__onSiteReady) window.__onSiteReady();
+});
+</script>
+</body></html>
