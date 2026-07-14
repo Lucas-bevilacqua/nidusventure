@@ -1,22 +1,21 @@
-/* nIUD — tipografia */
+/* Nidus — sistema tipográfico */
 :root {
-  --font-display: "Space Grotesk", "Helvetica Neue", sans-serif;
-  --font-body: "Instrument Sans", "Helvetica Neue", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
+  --font-body: "DM Sans", "Helvetica Neue", sans-serif;
+  --font-mono: "DM Sans", "Helvetica Neue", sans-serif;
 
-  /* Escala — tamanhos de display são fluidos (clamp) para responsividade */
-  --type-display-xl: 600 clamp(38px, 7.5vw, 72px)/1.04 var(--font-display); /* hero */
-  --type-display-lg: 600 clamp(31px, 6vw, 56px)/1.06 var(--font-display);
-  --type-display-md: 600 clamp(26px, 4.8vw, 40px)/1.10 var(--font-display);
-  --type-title: 600 clamp(22px, 3.4vw, 28px)/1.2 var(--font-display);
-  --type-heading: 600 clamp(19px, 2.6vw, 22px)/1.3 var(--font-display);
-  --type-body-lg: 400 clamp(16px, 2vw, 18px)/1.55 var(--font-body);
-  --type-body: 400 16px/1.55 var(--font-body);
-  --type-small: 400 14px/1.5 var(--font-body);
-  --type-caption: 500 12px/1.4 var(--font-body);
-  --type-overline: 500 12px/1.4 var(--font-mono); /* uppercase + tracking-wide */
-  --type-metric: 600 clamp(40px, 7vw, 64px)/1.0 var(--font-display);
+  --type-display-xl: 600 clamp(42px, 6.2vw, 78px)/1 var(--font-display);
+  --type-display-lg: 600 clamp(34px, 5vw, 60px)/1.04 var(--font-display);
+  --type-display-md: 600 clamp(30px, 4.2vw, 48px)/1.07 var(--font-display);
+  --type-title: 600 clamp(22px, 3vw, 28px)/1.18 var(--font-display);
+  --type-heading: 600 clamp(19px, 2.4vw, 23px)/1.25 var(--font-display);
+  --type-body-lg: 400 clamp(17px, 1.8vw, 20px)/1.58 var(--font-body);
+  --type-body: 400 16px/1.6 var(--font-body);
+  --type-small: 400 14px/1.55 var(--font-body);
+  --type-caption: 500 12px/1.45 var(--font-body);
+  --type-overline: 600 11px/1.4 var(--font-body);
+  --type-metric: 600 clamp(38px, 6vw, 58px)/1 var(--font-display);
 
-  --tracking-display: -0.02em;
-  --tracking-wide: 0.14em;
+  --tracking-display: -0.045em;
+  --tracking-wide: 0.11em;
 }
