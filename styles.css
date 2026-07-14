@@ -107,3 +107,28 @@ h2{font-weight:560}
   .choice+.choice{padding-left:0;border-left:0;border-top:1px solid var(--line)}
   .mobile-cta{border-radius:7px;background:var(--green);box-shadow:0 12px 30px rgba(0,0,0,.45)}
 }
+/* Copy operacional v3 */
+.hero-example{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-size:13px}
+.hero-example span,.hero-example strong{padding:9px 11px;border:1px solid var(--line);font-weight:500}
+.hero-example strong{border-color:rgba(85,217,141,.45);color:var(--text)}
+.hero-example i{font-style:normal;color:var(--muted)}
+.text-link{align-self:center;color:var(--soft);font-size:13px;border-bottom:1px solid var(--line);padding-bottom:3px}
+.demo-section{background:#080a08}
+.demo-flow{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.demo-flow article{min-height:230px;padding:26px 20px;border-left:1px solid var(--line)}
+.demo-flow article:first-child{border-left:0;padding-left:0}
+.demo-flow article:last-child{padding-right:0}
+.demo-flow article>span{display:block;margin-bottom:44px;color:var(--green);font-size:12px}
+.demo-flow h3{font-size:18px}
+.demo-flow p{margin:0;color:var(--muted);font-size:14px}
+.proof-placeholder{display:flex;justify-content:space-between;gap:20px;margin-top:34px;padding:20px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+.proof-placeholder strong{color:var(--soft);font-weight:500}
+.flows-grid-three{grid-template-columns:repeat(3,1fr)}
+.evidence-section{background:#080a08}
+.evidence-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:100px;align-items:start}
+.evidence-list{border-top:1px solid var(--line)}
+.evidence-list div{padding:24px 0;border-bottom:1px solid var(--line);color:var(--soft)}
+.final-content .lead{max-width:720px;margin:0 0 34px}
+.final-note{margin:18px 0 0;color:var(--muted);font-size:13px}
+@media(max-width:1050px){.demo-flow{grid-template-columns:1fr 1fr}.demo-flow article:nth-child(odd){border-left:0}.demo-flow article{border-bottom:1px solid var(--line)}.evidence-layout{grid-template-columns:1fr;gap:44px}}
+@media(max-width:720px){.hero-example{display:grid;grid-template-columns:1fr}.hero-example i{display:none}.text-link{align-self:center}.demo-flow{grid-template-columns:1fr}.demo-flow article:nth-child(n){min-height:0;padding:24px 0;border-left:0}.demo-flow article>span{margin-bottom:18px}.proof-placeholder{flex-direction:column}.flows-grid-three{grid-template-columns:1fr}}
