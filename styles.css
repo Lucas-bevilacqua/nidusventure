@@ -184,3 +184,13 @@ h2{font-weight:560}
   .container,.site-header .container{width:auto;max-width:none;margin-left:20px;margin-right:20px}
   p,h1,h2,h3,.lead,.hero-note{max-width:100%;overflow-wrap:anywhere}
 }
+/* Fluxo do hero mobile: informação, não controle */
+@media(max-width:720px){
+  .hero-example{position:relative;display:grid;grid-template-columns:1fr;width:100%;padding-left:18px;gap:10px}
+  .hero-example:before{content:"";position:absolute;left:3px;top:7px;bottom:7px;width:1px;background:var(--line-strong)}
+  .hero-example span,.hero-example strong{position:relative;width:auto;padding:0;border:0;color:var(--muted);font-size:12px;line-height:1.4}
+  .hero-example span:before,.hero-example strong:before{content:"";position:absolute;left:-18px;top:.45em;width:7px;height:7px;border:2px solid #050605;border-radius:50%;background:#69716b}
+  .hero-example strong{color:var(--text);font-weight:600}
+  .hero-example strong:before{background:var(--green)}
+  .hero-example i{display:none}
+}
