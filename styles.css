@@ -194,3 +194,69 @@ h2{font-weight:560}
   .hero-example strong:before{background:var(--green)}
   .hero-example i{display:none}
 }
+/* Arquitetura B2B para tráfego pago */
+.hero-operation{display:flex;min-height:720px;flex-direction:column;align-items:stretch;justify-content:center;padding:54px 44px;background:#0a0c0a}
+.hero-operation:after{display:none}
+.hero-flow-visual{width:100%;height:auto;border:1px solid var(--line);background:#070907}
+.hero-operation figcaption{padding:18px 0 0;color:var(--muted);font-size:13px}
+.selection-section{background:#080a08}
+.selection-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:100px;align-items:start}
+.criteria-list{border-top:1px solid var(--line)}
+.criteria-list>div{display:grid;grid-template-columns:36px 145px 1fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.criteria-list span{color:var(--green);font-size:12px}
+.criteria-list strong{font-weight:600}
+.criteria-list p{margin:0;color:var(--muted);font-size:14px}
+.application-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.application-grid .flow:nth-child(n){padding:28px 22px;border-left:1px solid var(--line)}
+.application-grid .flow:first-child{padding-left:0;border-left:0}
+.application-grid .flow:last-child{padding-right:0}
+.qualification-section{background:#080a08}
+.qualification-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.qualification-grid article{padding:34px 40px 34px 0}
+.qualification-grid article+article{padding-right:0;padding-left:40px;border-left:1px solid var(--line)}
+.qualification-label{display:block;margin-bottom:24px;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.qualification-label.good{color:var(--green)}
+.qualification-grid ul{display:grid;gap:13px;margin:0;padding:0;list-style:none}
+.qualification-grid li{position:relative;padding-left:18px;color:var(--soft)}
+.qualification-grid li:before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--muted)}
+.qualification-grid article:first-child li:before{background:var(--green)}
+.human-section{padding:96px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#f0f2ef;color:#0a0b0a}
+.human-layout{display:grid;grid-template-columns:.55fr 1.15fr 1fr;gap:50px;align-items:start}
+.human-section .kicker{color:#4d554f}
+.human-section h2{margin:0;font-size:clamp(30px,3.5vw,46px)}
+.human-section p{margin:4px 0 0;color:#4d554f;font-size:17px}
+.final-with-founder{display:grid;grid-template-columns:1fr 380px;gap:90px;align-items:center}
+.final-with-founder .final-content{max-width:760px}
+.founder-card{margin:0;border-left:1px solid var(--line);padding-left:28px}
+.founder-card img{width:100%;max-height:430px;object-fit:contain;object-position:center bottom;background:#090b09}
+.founder-card figcaption{display:flex;justify-content:space-between;gap:16px;padding-top:14px;color:var(--muted);font-size:13px}
+.founder-card strong{color:var(--text);font-weight:600}
+@media(max-width:1050px){
+  .selection-layout{grid-template-columns:1fr;gap:48px}
+  .application-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .application-grid .flow:nth-child(n){padding:26px 20px;border-left:0}
+  .application-grid .flow:nth-child(even){border-left:1px solid var(--line)}
+  .human-layout{grid-template-columns:1fr 1fr}
+  .human-layout .kicker{grid-column:1/-1}
+  .final-with-founder{grid-template-columns:1fr 320px;gap:50px}
+}
+@media(max-width:720px){
+  .hero-operation{width:calc(100% + 40px);min-height:360px;margin:0 -20px;padding:34px 20px}
+  .hero-operation figcaption{font-size:12px}
+  .selection-layout{gap:32px}
+  .criteria-list>div{grid-template-columns:28px minmax(0,1fr);gap:8px 12px}
+  .criteria-list p{grid-column:2}
+  .application-grid{grid-template-columns:1fr}
+  .application-grid .flow:nth-child(n){padding:26px 0;border-left:0}
+  .qualification-grid{grid-template-columns:1fr}
+  .qualification-grid article:nth-child(n){padding:28px 0;border-left:0}
+  .qualification-grid article+article{border-top:1px solid var(--line)}
+  .human-section{padding:72px 0}
+  .human-layout{grid-template-columns:1fr;gap:18px}
+  .human-layout .kicker{grid-column:auto}
+  .human-section h2{font-size:32px}
+  .human-section p{font-size:16px}
+  .final-with-founder{display:flex;flex-direction:column;gap:44px}
+  .founder-card{width:100%;padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:28px}
+  .founder-card img{max-height:380px}
+}
