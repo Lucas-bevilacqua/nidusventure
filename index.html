@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nidus — Um funcionário digital trabalhando na sua empresa</title>
   <meta name="description" content="Em uma call de duas horas, a Nidus instala um funcionário digital que conhece sua empresa e começa a trabalhar antes da call terminar.">
-  <meta name="theme-color" content="#050706">
+  <meta name="theme-color" content="#020403">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Nidus — Um funcionário digital trabalhando na sua empresa">
@@ -13,7 +13,6 @@
   <meta property="og:image" content="https://www.nidusventures.com.br/assets/lucas.png">
   <meta property="og:url" content="https://www.nidusventures.com.br/">
   <link rel="canonical" href="https://www.nidusventures.com.br/">
-  <link rel="icon" href="assets/nidus-mark.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/lucas.png">
   <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Nidus","url":"https://www.nidusventures.com.br/","description":"Implantação de um funcionário digital que conhece a empresa e executa tarefas operacionais.","founder":{"@type":"Person","name":"Lucas Bevilacqua"},"areaServed":"BR","serviceType":"Implantação de funcionário digital para pequenas e médias empresas"}</script>
@@ -22,32 +21,49 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top" aria-label="Nidus, início">
-        <img class="logo" src="assets/nidus-mark.svg" alt="" width="36" height="36">
+        <svg class="brand-mark" viewBox="0 0 128 128" aria-hidden="true">
+          <defs><linearGradient id="brand-dot-a" x1="38" y1="18" x2="88" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#13E89A"/><stop offset="1" stop-color="#48D7C7"/></linearGradient></defs>
+          <circle cx="64" cy="64" r="61" fill="#020303" stroke="#151817" stroke-width="6"/>
+          <circle cx="64" cy="43" r="13" fill="url(#brand-dot-a)"/>
+          <path d="M35 58c0 27 13 43 29 43s29-16 29-43" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+        </svg>
         nidus
       </a>
-      <a class="btn btn-primary" href="https://wa.me/5554996758327?text=Oi%20Lucas!%20Vim%20pelo%20site%20da%20Nidus%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">Agendar diagnóstico</a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#solucoes">Soluções</a>
+        <a href="#implantacao">Como funciona</a>
+        <a href="#ninho">O Ninho</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+      <a class="btn btn-outline" href="https://wa.me/5554996758327?text=Oi%20Lucas!%20Vim%20pelo%20site%20da%20Nidus%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">Falar com especialista ↗</a>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero section-dark">
-      <div class="container hero-copy">
-        <span class="kicker">Implantação Nidus</span>
-        <h1>Pare de contratar pessoas para fazer trabalho que uma IA faz melhor.</h1>
-        <p class="lead">Em uma call de duas horas, instalamos um funcionário digital na sua empresa. Antes da call terminar, ele já está trabalhando.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/5554996758327?text=Oi%20Lucas!%20Vim%20pelo%20site%20da%20Nidus%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">Agendar diagnóstico gratuito</a>
-          <a class="btn btn-secondary" href="#implantacao">Ver como funciona</a>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="kicker">Implantação Nidus</span>
+          <h1>Pare de contratar pessoas para fazer <span class="accent">trabalho que uma IA faz melhor.</span></h1>
+          <p class="lead">Em uma call de duas horas, instalamos um funcionário digital na sua empresa. Antes da call terminar, ele já está trabalhando.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/5554996758327?text=Oi%20Lucas!%20Vim%20pelo%20site%20da%20Nidus%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">Agendar diagnóstico gratuito ↗</a>
+            <a class="btn btn-secondary" href="#implantacao">Ver como funciona</a>
+          </div>
+          <div class="hero-meta" aria-label="Características da implantação">
+            <span>Sem curso</span>
+            <span>Sem projeto interminável</span>
+            <span>Primeiro trabalho entregue na call</span>
+          </div>
         </div>
-        <div class="hero-meta" aria-label="Características da implantação">
-          <span>Sem curso</span>
-          <span>Sem projeto interminável</span>
-          <span>Primeiro trabalho entregue na call</span>
+        <div class="hero-portrait">
+          <img src="assets/lucas.png" alt="Lucas Bevilacqua, fundador da Nidus" width="800" height="968" fetchpriority="high">
+          <div class="hero-caption"><strong>Lucas Bevilacqua</strong>Fundador da Nidus</div>
         </div>
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="section" id="solucoes">
       <div class="container pain-layout">
         <div>
           <span class="kicker">O custo invisível</span>
@@ -65,13 +81,13 @@
       </div>
     </section>
 
-    <section class="break-section section-dark">
+    <section class="break-section">
       <div class="container">
         <p class="break-copy">Você não precisa contratar mais pessoas. <strong>Precisa parar de desperdiçar as que já tem.</strong></p>
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <span class="kicker">A diferença</span>
@@ -79,36 +95,16 @@
           <p class="lead">A diferença não está em conversar com uma ferramenta. Está em receber o trabalho pronto no padrão da empresa.</p>
         </div>
         <div class="compare-table" role="table" aria-label="Comparação entre ChatGPT e Nidus">
-          <div class="compare-head" role="row">
-            <div role="columnheader">Critério</div>
-            <div role="columnheader">ChatGPT</div>
-            <div role="columnheader">Nidus</div>
-          </div>
-          <div class="compare-row" role="row">
-            <div role="cell">Contexto da empresa</div>
-            <div class="compare-no" role="cell">Precisa ser explicado</div>
-            <div class="compare-yes" role="cell">Já conhece</div>
-          </div>
-          <div class="compare-row" role="row">
-            <div role="cell">Arquivos e documentos</div>
-            <div class="compare-no" role="cell">Espera você enviar</div>
-            <div class="compare-yes" role="cell">Trabalha neles</div>
-          </div>
-          <div class="compare-row" role="row">
-            <div role="cell">Padrão da empresa</div>
-            <div class="compare-no" role="cell">Varia por usuário</div>
-            <div class="compare-yes" role="cell">Segue o padrão</div>
-          </div>
-          <div class="compare-row" role="row">
-            <div role="cell">Resultado final</div>
-            <div class="compare-no" role="cell">Gera texto</div>
-            <div class="compare-yes" role="cell">Entrega trabalho pronto</div>
-          </div>
+          <div class="compare-head" role="row"><div role="columnheader">Critério</div><div role="columnheader">ChatGPT</div><div role="columnheader">Nidus</div></div>
+          <div class="compare-row" role="row"><div role="cell">Contexto da empresa</div><div class="compare-no" role="cell">Precisa ser explicado</div><div class="compare-yes" role="cell">Já conhece</div></div>
+          <div class="compare-row" role="row"><div role="cell">Arquivos e documentos</div><div class="compare-no" role="cell">Espera você enviar</div><div class="compare-yes" role="cell">Trabalha neles</div></div>
+          <div class="compare-row" role="row"><div role="cell">Padrão da empresa</div><div class="compare-no" role="cell">Varia por usuário</div><div class="compare-yes" role="cell">Segue o padrão</div></div>
+          <div class="compare-row" role="row"><div role="cell">Resultado final</div><div class="compare-no" role="cell">Gera texto</div><div class="compare-yes" role="cell">Entrega trabalho pronto</div></div>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark">
+    <section class="section" id="ninho">
       <div class="container ninho-layout">
         <div>
           <span class="kicker">O Ninho</span>
@@ -116,25 +112,15 @@
           <p class="lead">O Ninho reúne o que o funcionário digital precisa saber para trabalhar como alguém de dentro. Você explica uma vez. Depois, esse conhecimento acompanha cada tarefa.</p>
         </div>
         <div class="ninho-board" aria-label="Informações armazenadas no Ninho">
-          <div class="ninho-board-head">
-            <strong>Memória da empresa</strong>
-            <span class="ninho-status">Sempre disponível</span>
-          </div>
+          <div class="ninho-board-head"><strong>Memória da empresa</strong><span class="ninho-status">Sempre disponível</span></div>
           <div class="ninho-grid">
-            <div class="ninho-item">Clientes</div>
-            <div class="ninho-item">Preços</div>
-            <div class="ninho-item">Propostas</div>
-            <div class="ninho-item">Contratos</div>
-            <div class="ninho-item">Documentos</div>
-            <div class="ninho-item">Tom de voz</div>
-            <div class="ninho-item">Processos</div>
-            <div class="ninho-item">Histórico</div>
+            <div class="ninho-item">Clientes</div><div class="ninho-item">Preços</div><div class="ninho-item">Propostas</div><div class="ninho-item">Contratos</div><div class="ninho-item">Documentos</div><div class="ninho-item">Tom de voz</div><div class="ninho-item">Processos</div><div class="ninho-item">Histórico</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-light" id="implantacao">
+    <section class="section" id="implantacao">
       <div class="container">
         <div class="section-head">
           <span class="kicker">Implantação</span>
@@ -142,36 +128,17 @@
           <p class="lead">A call não é uma aula. É a implantação sendo feita na sua tela.</p>
         </div>
         <div class="timeline">
-          <article class="step">
-            <span class="step-time">00:00</span>
-            <h3>Instalação</h3>
-            <p>Preparamos o ambiente no seu computador. Você não configura nada sozinho.</p>
-          </article>
-          <article class="step">
-            <span class="step-time">00:30</span>
-            <h3>Construção do Ninho</h3>
-            <p>Organizamos a memória da empresa para o funcionário digital conhecer o negócio.</p>
-          </article>
-          <article class="step">
-            <span class="step-time">01:15</span>
-            <h3>Primeiro fluxo</h3>
-            <p>Escolhemos uma tarefa real e colocamos o funcionário digital para executá-la.</p>
-          </article>
-          <article class="step">
-            <span class="step-time">02:00</span>
-            <h3>Empresa funcionando</h3>
-            <p>Você termina a call com o primeiro trabalho entregue e sabendo pedir os próximos.</p>
-          </article>
+          <article class="step"><span class="step-time">00:00</span><h3>Instalação</h3><p>Preparamos o ambiente no seu computador. Você não configura nada sozinho.</p></article>
+          <article class="step"><span class="step-time">00:30</span><h3>Construção do Ninho</h3><p>Organizamos a memória da empresa para o funcionário digital conhecer o negócio.</p></article>
+          <article class="step"><span class="step-time">01:15</span><h3>Primeiro fluxo</h3><p>Escolhemos uma tarefa real e colocamos o funcionário digital para executá-la.</p></article>
+          <article class="step"><span class="step-time">02:00</span><h3>Empresa funcionando</h3><p>Você termina a call com o primeiro trabalho entregue e sabendo pedir os próximos.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark">
+    <section class="section">
       <div class="container">
-        <div class="section-head">
-          <span class="kicker">O que ele pode assumir</span>
-          <h2>Comece pelo trabalho que mais consome o seu dia.</h2>
-        </div>
+        <div class="section-head"><span class="kicker">O que ele pode assumir</span><h2>Comece pelo trabalho que mais consome o seu dia.</h2></div>
         <div class="flows">
           <article class="flow"><span class="flow-number">01</span><h3>Atendimento</h3><p>Responde clientes no padrão da empresa e prepara a próxima ação.</p><span class="flow-result">Horas de fila viram minutos</span></article>
           <article class="flow"><span class="flow-number">02</span><h3>Cobrança</h3><p>Organiza pendências e prepara mensagens sem perder o tom profissional.</p><span class="flow-result">Rotina diária vira revisão</span></article>
@@ -183,43 +150,38 @@
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="section" id="sobre">
       <div class="container founder-layout">
-        <div class="founder-photo">
-          <img src="assets/lucas.png" alt="Lucas Bevilacqua, fundador da Nidus" width="800" height="968" loading="lazy">
-        </div>
+        <div class="founder-photo"><img src="assets/lucas.png" alt="Lucas Bevilacqua, fundador da Nidus" width="800" height="968" loading="lazy"></div>
         <div class="founder-copy">
           <span class="kicker">Por que a Nidus existe</span>
           <p class="founder-quote">“Eu vi empresas falando muito sobre IA e continuando a fazer o trabalho do mesmo jeito.”</p>
           <p>Lucas Bevilacqua criou a Nidus para encurtar essa distância. Em vez de vender teoria, ferramenta ou promessa, ele entra na operação, encontra um trabalho real e deixa a solução funcionando.</p>
           <p>O dono não precisa virar especialista em tecnologia. Precisa terminar a call com menos trabalho manual na empresa.</p>
-          <strong>Lucas Bevilacqua · fundador da Nidus</strong>
+          <div class="founder-signature">
+            <svg class="brand-mark" viewBox="0 0 128 128" aria-hidden="true">
+              <defs><linearGradient id="brand-dot-b" x1="38" y1="18" x2="88" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#13E89A"/><stop offset="1" stop-color="#48D7C7"/></linearGradient></defs>
+              <circle cx="64" cy="64" r="61" fill="#020303" stroke="#151817" stroke-width="6"/><circle cx="64" cy="43" r="13" fill="url(#brand-dot-b)"/><path d="M35 58c0 27 13 43 29 43s29-16 29-43" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+            </svg>
+            <div><strong>Lucas Bevilacqua</strong><span>Fundador da Nidus</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="guarantee section-dark">
-      <div class="container guarantee-inner">
-        <span class="kicker">Garantia</span>
-        <p class="guarantee-copy">Se nos primeiros 30 minutos eu não encontrar uma oportunidade real para economizar tempo ou dinheiro na sua empresa, encerramos a call e devolvemos 100% do valor.</p>
-      </div>
+    <section class="guarantee">
+      <div class="container guarantee-inner"><span class="kicker">Garantia</span><p class="guarantee-copy">Se nos primeiros 30 minutos eu não encontrar uma oportunidade real para economizar tempo ou dinheiro na sua empresa, encerramos a call e devolvemos 100% do valor.</p></div>
     </section>
 
-    <section class="section section-dark">
+    <section class="section">
       <div class="container">
         <span class="kicker">A decisão é operacional</span>
         <h2>Daqui a um mês você vai estar em um destes dois lugares.</h2>
         <div class="choice-grid">
-          <article class="choice">
-            <span class="choice-label">Continuar como está</span>
-            <p>Fazendo as mesmas tarefas manualmente.</p>
-          </article>
-          <article class="choice good">
-            <span class="choice-label">Implantar agora</span>
-            <p>Com um funcionário digital trabalhando por você.</p>
-          </article>
+          <article class="choice"><span class="choice-label">Continuar como está</span><p>Fazendo as mesmas tarefas manualmente.</p></article>
+          <article class="choice good"><span class="choice-label">Implantar agora</span><p>Com um funcionário digital trabalhando por você.</p></article>
         </div>
-        <a class="btn btn-primary final-cta" href="https://wa.me/5554996758327?text=Oi%20Lucas!%20Vim%20pelo%20site%20da%20Nidus%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">Agendar diagnóstico gratuito</a>
+        <a class="btn btn-primary final-cta" href="https://wa.me/5554996758327?text=Oi%20Lucas!%20Vim%20pelo%20site%20da%20Nidus%20e%20quero%20agendar%20meu%20diagn%C3%B3stico%20gratuito." target="_blank" rel="noopener">Agendar diagnóstico gratuito ↗</a>
       </div>
     </section>
   </main>
@@ -227,7 +189,10 @@
   <footer class="site-footer">
     <div class="container footer-row">
       <a class="brand" href="#top" aria-label="Nidus, início">
-        <img class="logo" src="assets/nidus-mark.svg" alt="" width="36" height="36">
+        <svg class="brand-mark" viewBox="0 0 128 128" aria-hidden="true">
+          <defs><linearGradient id="brand-dot-c" x1="38" y1="18" x2="88" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#13E89A"/><stop offset="1" stop-color="#48D7C7"/></linearGradient></defs>
+          <circle cx="64" cy="64" r="61" fill="#020303" stroke="#151817" stroke-width="6"/><circle cx="64" cy="43" r="13" fill="url(#brand-dot-c)"/><path d="M35 58c0 27 13 43 29 43s29-16 29-43" fill="none" stroke="#fff" stroke-width="14" stroke-linecap="round"/>
+        </svg>
         nidus
       </a>
       <span>© 2026 Nidus · contato@nidusventures.com.br · WhatsApp (54) 99675-8327</span>
