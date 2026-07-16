@@ -107,6 +107,9 @@ class TaskOutput(Base):
     flow_version: Mapped[int] = mapped_column(default=1)
     provider_used: Mapped[str] = mapped_column(String(30), default="mock")
     tokens_used: Mapped[int] = mapped_column(default=0)
+    tokens_in: Mapped[int] = mapped_column(default=0)
+    tokens_out: Mapped[int] = mapped_column(default=0)
+    cost_usd: Mapped[float] = mapped_column(default=0.0)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=_now)
 
     task: Mapped["Task"] = relationship(back_populates="output")

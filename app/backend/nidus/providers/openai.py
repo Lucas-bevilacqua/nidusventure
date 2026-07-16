@@ -1,4 +1,6 @@
-"""Provedor OpenAI. SDK importado de forma preguicosa (ver anthropic.py)."""
+"""Provedor OpenAI. SDK importado de forma preguicosa (ver anthropic.py).
+Reporta tokens de entrada/saida para a medicao de custo.
+"""
 from ..config import settings
 from .base import AIProvider, Completion, Prompt
 
@@ -18,6 +20,11 @@ class OpenAIProvider(AIProvider):
             ],
             response_format={"type": "json_object"},
         )
-        text = resp.choices[0].message.content or ""
-        tokens = resp.usage.total_tokens if resp.usage else 0
-        return Completion(text=text, tokens=tokens, provider=self.name)
+        usage = resp.usage
+        return Completion(
+            text=resp.choices[0].message.content or "",
+            tokens_in=usage.prompt_tokens if usage else 0,
+            tokens_out=usage.completion_tokens if usage else 0,
+            provider=self.name,
+            model=settings.openai_model,
+        )

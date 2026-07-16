@@ -16,13 +16,26 @@ class MockProvider(AIProvider):
         ctx = prompt.context
         flow = ctx.get("flow_code")
         if flow == "proposals":
-            return self._proposals(ctx)
+            return self._proposals(prompt, ctx)
         # fallback generico
         out = {"content": "(mock) fluxo nao especializado", "uncertainties": [],
                "human_decisions": [], "checklist": []}
-        return Completion(text=json.dumps(out, ensure_ascii=False), provider=self.name)
+        return self._wrap(prompt, out)
 
-    def _proposals(self, ctx: dict) -> Completion:
+    @staticmethod
+    def _estimate_tokens(text: str) -> int:
+        # Proxy grosseiro (~4 chars/token). Substituido por contagem real ao
+        # ligar um provedor com API. Serve para demonstrar o pipeline de custo.
+        return max(1, len(text) // 4)
+
+    def _wrap(self, prompt: Prompt, out: dict) -> Completion:
+        text = json.dumps(out, ensure_ascii=False)
+        tokens_in = self._estimate_tokens(prompt.system + prompt.as_user_message())
+        tokens_out = self._estimate_tokens(text)
+        return Completion(text=text, tokens_in=tokens_in, tokens_out=tokens_out,
+                          provider=self.name, model="mock")
+
+    def _proposals(self, prompt: Prompt, ctx: dict) -> Completion:
         data = ctx.get("input", {})
         refs = ctx.get("references", {})
         precos = {str(p.get("nome", "")).lower(): p for p in refs.get("precos", [])}
@@ -59,4 +72,4 @@ class MockProvider(AIProvider):
             "human_decisions": decisoes,
             "checklist": checklist,
         }
-        return Completion(text=json.dumps(out, ensure_ascii=False), provider=self.name)
+        return self._wrap(prompt, out)

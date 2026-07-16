@@ -5,8 +5,9 @@ Provam as regras duras do fluxo de Propostas usando o provedor mock (sem chaves)
 import json
 import os
 
-# Forca SQLite em memoria nos testes, ignorando qualquer DATABASE_URL global do ambiente.
+# Forca SQLite em memoria e provedor mock nos testes (hermetico, sem rede).
 os.environ["DATABASE_URL"] = "sqlite:///:memory:"
+os.environ["AI_DEFAULT_PROVIDER"] = "mock"
 
 from nidus.db import Base, SessionLocal, engine  # noqa: E402
 from nidus.engine import run_flow  # noqa: E402

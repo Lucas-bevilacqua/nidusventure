@@ -14,4 +14,7 @@ def get_provider(code: str | None = None) -> AIProvider:
     if code == "openai":
         from .openai import OpenAIProvider
         return OpenAIProvider()
+    if code == "openrouter":
+        from .openrouter import OpenRouterProvider
+        return OpenRouterProvider()
     raise ValueError(f"Provedor de IA desconhecido: {code}")

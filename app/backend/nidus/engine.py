@@ -13,6 +13,7 @@ from sqlalchemy.orm import Session
 from .flows import get_flow_template
 from .models import FlowInstance, NinhoItem, Task, TaskOutput
 from .providers import Prompt, get_provider
+from .providers.pricing import cost_usd
 
 
 def _select_references(db: Session, workspace_id: str, wanted_types: list[str]) -> dict:
@@ -41,6 +42,22 @@ def _validate_input(payload: dict, required: list[str]) -> list[str]:
     """Faltas NAO bloqueiam a execucao: viram incertezas (spec)."""
     missing = [f for f in required if not payload.get(f)]
     return [f"Campo obrigatorio ausente: {f}" for f in missing]
+
+
+def _parse_json(text: str) -> dict:
+    """Parse tolerante: remove cercas markdown e isola o objeto JSON."""
+    t = text.strip()
+    if t.startswith("```"):
+        t = t.split("```", 2)[1] if t.count("```") >= 2 else t.strip("`")
+        if t.lstrip().startswith("json"):
+            t = t.lstrip()[4:]
+    try:
+        return json.loads(t)
+    except json.JSONDecodeError:
+        start, end = t.find("{"), t.rfind("}")
+        if start != -1 and end != -1:
+            return json.loads(t[start:end + 1])
+        raise
 
 
 def _with_retries(fn, attempts: int = 3, base_delay: float = 0.5):
@@ -76,6 +93,7 @@ def run_flow(db: Session, task: Task) -> TaskOutput:
             "references": selected["refs"],
             "input": task.payload,
         },
+        schema=template.get("output_schema"),
     )
 
     # 4. acionar provedor (server-side, com retry)
@@ -83,7 +101,7 @@ def run_flow(db: Session, task: Task) -> TaskOutput:
     provider = get_provider(provider_code)
     try:
         completion = _with_retries(lambda: provider.complete(prompt, timeout=120))
-        parsed = json.loads(completion.text)
+        parsed = _parse_json(completion.text)
     except Exception:  # noqa: BLE001
         task.status = "failed"
         db.commit()
@@ -92,7 +110,11 @@ def run_flow(db: Session, task: Task) -> TaskOutput:
     # 5. validar saida (junta avisos de entrada com incertezas do modelo)
     uncertainties = list(dict.fromkeys(input_warnings + parsed.get("uncertainties", [])))
 
-    # 6/7. salvar entrega + checklist
+    # 6/7. salvar entrega + checklist + custo (real do provedor, ou estimado pela tabela)
+    cost = completion.cost_usd
+    if cost is None:
+        cost = cost_usd(completion.provider, completion.model,
+                        completion.tokens_in, completion.tokens_out)
     output = TaskOutput(
         task_id=task.id,
         content=parsed.get("content", ""),
@@ -103,6 +125,9 @@ def run_flow(db: Session, task: Task) -> TaskOutput:
         flow_version=template["version"],
         provider_used=completion.provider,
         tokens_used=completion.tokens,
+        tokens_in=completion.tokens_in,
+        tokens_out=completion.tokens_out,
+        cost_usd=cost,
     )
     db.add(output)
     task.status = "ready"

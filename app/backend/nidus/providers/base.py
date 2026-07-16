@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 class Prompt:
     system: str
     context: dict = field(default_factory=dict)  # {references, input, flow_code}
+    schema: dict | None = None  # JSON Schema para saida estruturada (opcional)
 
     def as_user_message(self) -> str:
         """Serializa o contexto para provedores baseados em mensagens."""
@@ -28,8 +29,15 @@ class Prompt:
 @dataclass
 class Completion:
     text: str          # JSON (string) conforme contrato do fluxo
-    tokens: int = 0
+    tokens_in: int = 0
+    tokens_out: int = 0
     provider: str = ""
+    model: str = ""
+    cost_usd: float | None = None  # custo real informado pelo provedor (ex.: OpenRouter)
+
+    @property
+    def tokens(self) -> int:
+        return self.tokens_in + self.tokens_out
 
 
 class AIProvider(ABC):
